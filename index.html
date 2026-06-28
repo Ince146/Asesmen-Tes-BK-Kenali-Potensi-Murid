@@ -1032,13 +1032,15 @@
         let formattedDate = new Date().toLocaleDateString('id-ID', dateOptions);
         document.getElementById('current-date-lbl').innerText = `${cityGuess}, ${formattedDate}`;
 
+        // Membangun baris tabel hasil per kolom terpisah (Aspek, Kategori, Persentase, Deskripsi)
         const tbody = document.getElementById('dynamic-table-rows');
         tbody.innerHTML = "";
 
-        finalRiasec.forEach((item, idx) => {
+        // 1. RIASEC: Hanya tampilkan 3 tertinggi (.slice(0, 3) dan rowspan="3")
+        finalRiasec.slice(0, 3).forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
-                rowHTML += `<td rowspan="6" style="vertical-align: middle; background-color: var(--box-riasec) !important;"><strong>1. Minat Karir / Tipologi Kerja</strong><br><small>(Holland RIASEC Model)</small></td>`;
+                rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-riasec) !important;"><strong>1. Minat Karir / Tipologi Kerja</strong><br><small>(Holland RIASEC Model)</small></td>`;
             }
             rowHTML += `<td style="background-color: var(--box-riasec) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-riasec) !important;"><strong>${item.percent}%</strong></td>`;
@@ -1047,10 +1049,11 @@
             tbody.innerHTML += rowHTML;
         });
 
-        finalGardner.forEach((item, idx) => {
+        // 2. GARDNER: Hanya tampilkan 3 tertinggi (.slice(0, 3) dan rowspan="3")
+        finalGardner.slice(0, 3).forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
-                rowHTML += `<td rowspan="8" style="vertical-align: middle; background-color: var(--box-gardner) !important;"><strong>2. Potensi Kecerdasan Majemuk</strong><br><small>(Multiple Intelligences Gardner)</small></td>`;
+                rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-gardner) !important;"><strong>2. Potensi Kecerdasan Majemuk</strong><br><small>(Multiple Intelligences Gardner)</small></td>`;
             }
             rowHTML += `<td style="background-color: var(--box-gardner) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-gardner) !important;"><strong>${item.percent}%</strong></td>`;
@@ -1059,16 +1062,13 @@
             tbody.innerHTML += rowHTML;
         });
 
-        finalVak.forEach((item, idx) => {
-            let displayName = item.name;
-            if (displayName === "Auditory") displayName = "Auditori (Auditory)";
-            if (displayName === "Kinesthetic_VAK") displayName = "Kinestetik (Kinesthetic)";
-            
+        // 3. VAK GAYA BELAJAR: Hanya tampilkan 1 tertinggi (.slice(0, 1) dan rowspan="1")
+        finalVak.slice(0, 1).forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
-                rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-vak) !important;"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
+                rowHTML += `<td rowspan="1" style="vertical-align: middle; background-color: var(--box-vak) !important;"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
             }
-            rowHTML += `<td style="background-color: var(--box-vak) !important;">Peringkat ${idx+1}: <strong>${displayName}</strong></td>`;
+            rowHTML += `<td style="background-color: var(--box-vak) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-vak) !important;"><strong>${item.percent}%</strong></td>`;
             rowHTML += `<td style="background-color: var(--box-vak) !important;">${recommendations[item.name] || 'Deskripsi tidak ditemukan'}</td>`;
             rowHTML += "</tr>";
