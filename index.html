@@ -283,7 +283,7 @@
         .options-likert, .options-binary { display: flex; flex-direction: column; gap: 12px; }
         
         button.opt-btn {
-            padding: 14px 18px; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 0.95rem; font-weight: 600; background: white; text-align: left; color: #000000;
+            width: 100%; padding: 14px 18px; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 0.95rem; font-weight: 600; background: white; text-align: left; color: #000000;
         }
         button.opt-btn.selected { background-color: var(--primary-light); border-color: var(--primary); color: var(--primary); }
         button.opt-btn:hover { border-color: var(--primary); background-color: #fafafa; }
@@ -292,10 +292,10 @@
         
         .grid-box { border: 1px solid #cbd5e1; padding: 25px; border-radius: 16px; background-color: #f8fafc; }
         .grid-title { font-weight: 700; margin-bottom: 20px; font-size: 0.95rem; text-align: center; color: #000000; }
-        .number-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-height: 320px; overflow-y: auto; padding-right: 5px; }
+        .number-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-height: 360px; overflow-y: auto; padding-right: 5px; }
         
         .num-item {
-            aspect-ratio: 1; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            aspect-ratio: 1; border: none; border-radius: 8px; font-size: 0.85rem; font-weight: 700; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
         }
         .num-answered { background-color: var(--status-answered); }
         .num-unanswered { background-color: var(--status-unanswered); color: white; }
@@ -613,7 +613,7 @@
                     <p style="margin-top: 5px; font-size: 0.9rem; font-weight: 600;" id="sig-student-nisn">NISN. </p>
                 </div>
                 <div>
-                    <p><span id="current-date-lbl">Kota Asal, </span><br><strong>Guru Bimbingan & Konseling</strong></p>
+                    <p><span id="current-date-lbl">Kota Asal, </span><br><strong>Guru Bimbingan &amp; Konseling</strong></p>
                     <div class="sig-space"></div>
                     <p>_______________________</p>
                     <p style="margin-top: 5px; font-size: 0.9rem; font-weight: 600;">NIP. ........................................</p>
@@ -631,17 +631,9 @@
 <script>
     document.getElementById('copyright-year').innerText = new Date().getFullYear();
 
-    <script>
-    document.getElementById('copyright-year').innerText = new Date().getFullYear();
-
-    <script>
-    document.getElementById('copyright-year').innerText = new Date().getFullYear();
-
-    <script>
-    document.getElementById('copyright-year').innerText = new Date().getFullYear();
-
     const questions = [
-        // --- 1. RIASEC (1 - 60) --- Total: 60 Soal (Ditambah 12 Soal Baru)
+        // --- 1. RIASEC (1 - 48 Nomor) ---
+        // Realistic (8)
         { id: 1, section: "Sesi 1: RIASEC (Realistic)", text: "Saya suka merakit komponen komputer atau memperbaiki alat elektronik.", category: "Realistic", type: "riasec" },
         { id: 2, section: "Sesi 1: RIASEC (Realistic)", text: "Saya tertarik pada bidang otomotif, mesin, atau pertukangan kayu.", category: "Realistic", type: "riasec" },
         { id: 3, section: "Sesi 1: RIASEC (Realistic)", text: "Saya lebih suka bekerja menggunakan peralatan atau tangan saya sendiri.", category: "Realistic", type: "riasec" },
@@ -650,150 +642,166 @@
         { id: 6, section: "Sesi 1: RIASEC (Realistic)", text: "Saya merasa puas ketika berhasil membuat atau memperbaiki benda nyata.", category: "Realistic", type: "riasec" },
         { id: 7, section: "Sesi 1: RIASEC (Realistic)", text: "Saya suka mengoperasikan mesin besar atau alat-alat berat.", category: "Realistic", type: "riasec" },
         { id: 8, section: "Sesi 1: RIASEC (Realistic)", text: "Saya lebih memilih kegiatan olahraga praktis daripada teori taktik olahraga.", category: "Realistic", type: "riasec" },
-        { id: 9, section: "Sesi 1: RIASEC (Realistic)", text: "Saya tertarik mempelajari sistem kelistrikan dan instalasi kabel rumah tangga.", category: "Realistic", type: "riasec" },
-        { id: 10, section: "Sesi 1: RIASEC (Realistic)", text: "Saya senang melakukan perawatan berkala pada kendaraan bermotor.", category: "Realistic", type: "riasec" },
-        { id: 11, section: "Sesi 1: RIASEC (Investigative)", text: "Saya senang memecahkan teka-teki matematika atau logika yang rumit.", category: "Investigative", type: "riasec" },
-        { id: 12, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka membaca jurnal ilmiah atau artikel tentang penemuan baru.", category: "Investigative", type: "riasec" },
-        { id: 13, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka menganalisis masalah untuk mencari akar penyebabnya.", category: "Investigative", type: "riasec" },
-        { id: 14, section: "Sesi 1: RIASEC (Investigative)", text: "Saya tertarik melakukan eksperimen laboratorium atau penelitian ilmiah.", category: "Investigative", type: "riasec" },
-        { id: 15, section: "Sesi 1: RIASEC (Investigative)", text: "Saya senang mempelajari cara kerja alam semesta atau tubuh manusia.", category: "Investigative", type: "riasec" },
-        { id: 16, section: "Sesi 1: RIASEC (Investigative)", text: "Saya sering mempertanyakan kebenaran suatu informasi sebelum mempercayainya.", category: "Investigative", type: "riasec" },
-        { id: 17, section: "Sesi 1: RIASEC (Investigative)", text: "Saya menikmati mata pelajaran sains, fisika, kimia, atau biologi.", category: "Investigative", type: "riasec" },
-        { id: 18, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka menggunakan komputer untuk memproses dan menganalisis data.", category: "Investigative", type: "riasec" },
-        { id: 19, section: "Sesi 1: RIASEC (Investigative)", text: "Saya penasaran meneliti kode program (*coding*) untuk mencari letak kesalahan sistem.", category: "Investigative", type: "riasec" },
-        { id: 20, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka memetakan data statistik untuk melihat tren perkembangannya.", category: "Investigative", type: "riasec" },
-        { id: 21, section: "Sesi 1: RIASEC (Artistic)", text: "Saya menikmati kegiatan mendesain poster, mengedit video, atau menggambar.", category: "Artistic", type: "riasec" },
-        { id: 22, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka menulis cerita pendek, puisi, atau artikel kreatif.", category: "Artistic", type: "riasec" },
-        { id: 23, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang mengekspresikan perasaan lewat bermain musik atau bernyanyi.", category: "Artistic", type: "riasec" },
-        { id: 24, section: "Sesi 1: RIASEC (Artistic)", text: "Saya lebih menyukai lingkungan kerja yang fleksibel dan tidak kaku.", category: "Artistic", type: "riasec" },
-        { id: 25, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka memikirkan ide-ide baru yang unik dan tidak biasa.", category: "Artistic", type: "riasec" },
-        { id: 26, section: "Sesi 1: RIASEC (Artistic)", text: "Saya tertarik menonton pameran seni, pertunjukan teater, atau konser.", category: "Artistic", type: "riasec" },
-        { id: 27, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang mendekorasi ruangan agar terlihat estetik.", category: "Artistic", type: "riasec" },
-        { id: 28, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka berimajinasi dan membuat karya orisinal dari pemikiran sendiri.", category: "Artistic", type: "riasec" },
-        { id: 29, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka membuat sketsa atau coretan artistik saat memiliki waktu luang.", category: "Artistic", type: "riasec" },
-        { id: 30, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang merancang konsep pakaian atau tata busana yang unik.", category: "Artistic", type: "riasec" },
-        { id: 31, section: "Sesi 1: RIASEC (Social)", text: "Saya merasa puas jika bisa membantu orang lain menyelesaikan masalah mereka.", category: "Social", type: "riasec" },
-        { id: 32, section: "Sesi 1: RIASEC (Social)", text: "Saya suka mengajar, menjelaskan materi, atau melatih teman di sekolah.", category: "Social", type: "riasec" },
-        { id: 33, section: "Sesi 1: RIASEC (Social)", text: "Saya senang terlibat dalam kegiatan sosial atau menjadi relawan.", category: "Social", type: "riasec" },
-        { id: 34, section: "Sesi 1: RIASEC (Social)", text: "Orang lain sering datang kepada saya untuk bercerita atau curhat.", category: "Social", type: "riasec" },
-        { id: 35, section: "Sesi 1: RIASEC (Social)", text: "Saya menikmati pekerjaan yang mengharuskan saya merawat atau menjaga orang lain.", category: "Social", type: "riasec" },
-        { id: 36, section: "Sesi 1: RIASEC (Social)", text: "Saya lebih suka bekerja dalam tim kelompok daripada sendirian.", category: "Social", type: "riasec" },
-        { id: 37, section: "Sesi 1: RIASEC (Social)", text: "Saya mudah berempati terhadap kesulitan yang dialami orang di sekitar saya.", category: "Social", type: "riasec" },
-        { id: 38, section: "Sesi 1: RIASEC (Social)", text: "Saya menyukai kegiatan diskusi kelompok membahas masalah kemanusiaan.", category: "Social", type: "riasec" },
-        { id: 39, section: "Sesi 1: RIASEC (Social)", text: "Saya merasa bahagia ketika menjadi penengah konflik teman yang berselisih.", category: "Social", type: "riasec" },
-        { id: 40, section: "Sesi 1: RIASEC (Social)", text: "Saya aktif dalam kegiatan bakti sosial dan penggalangan dana kemanusiaan.", category: "Social", type: "riasec" },
-        { id: 41, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka memimpin suatu kelompok, kepanitiaan, atau organisasi.", category: "Enterprising", type: "riasec" },
-        { id: 42, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya tertarik mencoba berjualan atau berbisnis untuk mencari keuntungan.", category: "Enterprising", type: "riasec" },
-        { id: 43, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya percaya diri saat harus meyakinkan orang lain agar setuju dengan pendapat saya.", category: "Enterprising", type: "riasec" },
-        { id: 44, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka mengambil risiko untuk mencapai kesuksesan yang lebih besar.", category: "Enterprising", type: "riasec" },
-        { id: 45, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya senang merencanakan strategi untuk memenangkan suatu kompetisi.", category: "Enterprising", type: "riasec" },
-        { id: 46, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka berbicara di depan umum untuk memotivasi atau memengaruhi orang.", category: "Enterprising", type: "riasec" },
-        { id: 47, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya tertarik mempelajari cara mengelola uang atau menjalankan perusahaan.", category: "Enterprising", type: "riasec" },
-        { id: 48, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya senang bersaing dan berkompetisi secara sehat dengan orang lain.", category: "Enterprising", type: "riasec" },
-        { id: 49, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka menawarkan ide kerja sama dagang atau kemitraan usaha.", category: "Enterprising", type: "riasec" },
-        { id: 50, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya terbiasa memikirkan target pencapaian finansial pribadi jangka panjang.", category: "Enterprising", type: "riasec" },
-        { id: 51, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka menyusun file, data, atau dokumen secara teratur dan rapi.", category: "Conventional", type: "riasec" },
-        { id: 52, section: "Sesi 1: RIASEC (Conventional)", text: "Saya lebih menyukai instruksi kerja yang jelas, detail, dan tertulis baku.", category: "Conventional", type: "riasec" },
-        { id: 53, section: "Sesi 1: RIASEC (Conventional)", text: "Saya senang mengelola pembukuan keuangan atau mencatat anggaran.", category: "Conventional", type: "riasec" },
-        { id: 54, section: "Sesi 1: RIASEC (Conventional)", text: "Saya sangat memperhatikan detail kecil agar tidak terjadi kesalahan ketik/hitung.", category: "Conventional", type: "riasec" },
-        { id: 55, section: "Sesi 1: RIASEC (Conventional)", text: "Saya merasa nyaman bekerja dengan rutinitas yang terjadwal pasti.", category: "Conventional", type: "riasec" },
-        { id: 56, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka membuat daftar tugas (*to-do list*) untuk mengatur harian saya.", category: "Conventional", type: "riasec" },
-        { id: 57, section: "Sesi 1: RIASEC (Conventional)", text: "Saya pandai memeriksa keakuratan laporan angka atau data tabel.", category: "Conventional", type: "riasec" },
-        { id: 58, section: "Sesi 1: RIASEC (Conventional)", text: "Saya lebih memilih pekerjaan di dalam kantor dengan alur kerja yang pasti.", category: "Conventional", type: "riasec" },
-        { id: 59, section: "Sesi 1: RIASEC (Conventional)", text: "Saya selalu menyortir barang atau arsip berdasarkan urutan alfabet atau kode.", category: "Conventional", type: "riasec" },
-        { id: 60, section: "Sesi 1: RIASEC (Conventional)", text: "Saya sangat teliti menyelaraskan kuitansi belanja dengan catatan laporan saldo resmi.", category: "Conventional", type: "riasec" },
+        // Investigative (8)
+        { id: 9, section: "Sesi 1: RIASEC (Investigative)", text: "Saya senang memecahkan teka-teki matematika atau logika yang rumit.", category: "Investigative", type: "riasec" },
+        { id: 10, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka membaca jurnal ilmiah atau artikel tentang penemuan baru.", category: "Investigative", type: "riasec" },
+        { id: 11, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka menganalisis masalah untuk mencari akar penyebabnya.", category: "Investigative", type: "riasec" },
+        { id: 12, section: "Sesi 1: RIASEC (Investigative)", text: "Saya tertarik melakukan eksperimen laboratorium atau penelitian ilmiah.", category: "Investigative", type: "riasec" },
+        { id: 13, section: "Sesi 1: RIASEC (Investigative)", text: "Saya senang mempelajari cara kerja alam semesta atau tubuh manusia.", category: "Investigative", type: "riasec" },
+        { id: 14, section: "Sesi 1: RIASEC (Investigative)", text: "Saya sering mempertanyakan kebenaran suatu informasi sebelum mempercayainya.", category: "Investigative", type: "riasec" },
+        { id: 15, section: "Sesi 1: RIASEC (Investigative)", text: "Saya menikmati mata pelajaran sains, fisika, kimia, atau biologi.", category: "Investigative", type: "riasec" },
+        { id: 16, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka menggunakan komputer untuk memproses dan menganalisis data.", category: "Investigative", type: "riasec" },
+        // Artistic (8)
+        { id: 17, section: "Sesi 1: RIASEC (Artistic)", text: "Saya menikmati kegiatan mendesain poster, mengedit video, atau menggambar.", category: "Artistic", type: "riasec" },
+        { id: 18, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka menulis cerita pendek, puisi, atau artikel kreatif.", category: "Artistic", type: "riasec" },
+        { id: 19, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang mengekspresikan perasaan lewat bermain musik atau bernyanyi.", category: "Artistic", type: "riasec" },
+        { id: 20, section: "Sesi 1: RIASEC (Artistic)", text: "Saya lebih menyukai lingkungan kerja yang fleksibel dan tidak kaku.", category: "Artistic", type: "riasec" },
+        { id: 21, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka memikirkan ide-ide baru yang unik dan tidak biasa.", category: "Artistic", type: "riasec" },
+        { id: 22, section: "Sesi 1: RIASEC (Artistic)", text: "Saya tertarik menonton pameran seni, pertunjukan teater, atau konser.", category: "Artistic", type: "riasec" },
+        { id: 23, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang mendekorasi ruangan agar terlihat estetik.", category: "Artistic", type: "riasec" },
+        { id: 24, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka berimajinasi dan membuat karya orisinal dari pemikiran sendiri.", category: "Artistic", type: "riasec" },
+        // Social (8)
+        { id: 25, section: "Sesi 1: RIASEC (Social)", text: "Saya merasa puas jika bisa membantu orang lain menyelesaikan masalah mereka.", category: "Social", type: "riasec" },
+        { id: 26, section: "Sesi 1: RIASEC (Social)", text: "Saya suka mengajar, menjelaskan materi, atau melatih teman di sekolah.", category: "Social", type: "riasec" },
+        { id: 27, section: "Sesi 1: RIASEC (Social)", text: "Saya senang terlibat dalam kegiatan sosial atau menjadi relawan.", category: "Social", type: "riasec" },
+        { id: 28, section: "Sesi 1: RIASEC (Social)", text: "Orang lain sering datang kepada saya untuk bercerita atau curhat.", category: "Social", type: "riasec" },
+        { id: 29, section: "Sesi 1: RIASEC (Social)", text: "Saya menikmati pekerjaan yang mengharuskan saya merawat atau menjaga orang lain.", category: "Social", type: "riasec" },
+        { id: 30, section: "Sesi 1: RIASEC (Social)", text: "Saya lebih suka bekerja dalam tim kelompok daripada sendirian.", category: "Social", type: "riasec" },
+        { id: 31, section: "Sesi 1: RIASEC (Social)", text: "Saya mudah berempati terhadap kesulitan yang dialami orang di sekitar saya.", category: "Social", type: "riasec" },
+        { id: 32, section: "Sesi 1: RIASEC (Social)", text: "Saya menyukai kegiatan diskusi kelompok membahas masalah kemanusiaan.", category: "Social", type: "riasec" },
+        // Enterprising (8)
+        { id: 33, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka memimpin suatu kelompok, kepanitiaan, atau organisasi.", category: "Enterprising", type: "riasec" },
+        { id: 34, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya tertarik mencoba berjualan atau berbisnis untuk mencari keuntungan.", category: "Enterprising", type: "riasec" },
+        { id: 35, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya percaya diri saat harus meyakinkan orang lain agar setuju dengan pendapat saya.", category: "Enterprising", type: "riasec" },
+        { id: 36, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka mengambil risiko untuk mencapai kesuksesan yang lebih besar.", category: "Enterprising", type: "riasec" },
+        { id: 37, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya senang merencanakan strategi untuk memenangkan suatu kompetisi.", category: "Enterprising", type: "riasec" },
+        { id: 38, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka berbicara di depan umum untuk memotivasi atau memengaruhi orang.", category: "Enterprising", type: "riasec" },
+        { id: 39, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya tertarik mempelajari cara mengelola uang atau menjalankan perusahaan.", category: "Enterprising", type: "riasec" },
+        { id: 40, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya senang bersaing dan berkompetisi secara sehat dengan orang lain.", category: "Enterprising", type: "riasec" },
+        // Conventional (8)
+        { id: 41, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka menyusun file, data, atau dokumen secara teratur dan rapi.", category: "Conventional", type: "riasec" },
+        { id: 42, section: "Sesi 1: RIASEC (Conventional)", text: "Saya lebih menyukai instruksi kerja yang jelas, detail, dan tertulis baku.", category: "Conventional", type: "riasec" },
+        { id: 43, section: "Sesi 1: RIASEC (Conventional)", text: "Saya senang mengelola pembukuan keuangan atau mencatat anggaran.", category: "Conventional", type: "riasec" },
+        { id: 44, section: "Sesi 1: RIASEC (Conventional)", text: "Saya sangat memperhatikan detail kecil agar tidak terjadi kesalahan ketik/hitung.", category: "Conventional", type: "riasec" },
+        { id: 45, section: "Sesi 1: RIASEC (Conventional)", text: "Saya merasa nyaman bekerja dengan rutinitas yang terjadwal pasti.", category: "Conventional", type: "riasec" },
+        { id: 46, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka membuat daftar tugas (*to-do list*) untuk mengatur harian saya.", category: "Conventional", type: "riasec" },
+        { id: 47, section: "Sesi 1: RIASEC (Conventional)", text: "Saya pandai memeriksa keakuratan laporan angka atau data tabel.", category: "Conventional", type: "riasec" },
+        { id: 48, section: "Sesi 1: RIASEC (Conventional)", text: "Saya lebih memilih pekerjaan di dalam kantor dengan alur kerja yang pasti.", category: "Conventional", type: "riasec" },
 
-        // --- 2. GARDNER MIS (61 - 108) --- Total: 48 Soal (Ditambah 24 Soal Baru)
-        { id: 61, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya mudah mengingat kata-kata baru dan suka menulis artikel atau cerita.", category: "Linguistic", type: "gardner" },
-        { id: 62, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya suka membaca buku teks, novel, ataupun artikel berita secara rutin.", category: "Linguistic", type: "gardner" },
-        { id: 63, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya menyukai permainan kata seperti teka-teki silang atau bermain anagram.", category: "Linguistic", type: "gardner" },
-        { id: 64, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya percaya diri dalam menyusun kalimat pidato yang menarik perhatian audiens.", category: "Linguistic", type: "gardner" },
-        { id: 65, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya senang mempelajari kosa kata bahasa asing baru di waktu senggang.", category: "Linguistic", type: "gardner" },
-        { id: 66, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya sering mencatat kata mutiara atau kutipan kalimat bijak dari buku.", category: "Linguistic", type: "gardner" },
-        { id: 67, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya cepat memahami rumus angka dan senang menganalisis pola logika matematika.", category: "Logical-Mathematical", type: "gardner" },
-        { id: 68, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya suka membuat hipotesis dan melakukan pembuktian ilmiah yang teratur.", category: "Logical-Mathematical", type: "gardner" },
-        { id: 69, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya tertantang menguraikan logika algoritma pemrograman yang rumit.", category: "Logical-Mathematical", type: "gardner" },
-        { id: 70, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya senang mengklasifikasikan objek berdasarkan kategori logis tertentu.", category: "Logical-Mathematical", type: "gardner" },
-        { id: 71, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya sering memperhitungkan probabilitas peluang keuntungan sebelum bertindak.", category: "Logical-Mathematical", type: "gardner" },
-        { id: 72, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya suka menganalisis grafik naik-turun data riset keuangan ekonomi.", category: "Logical-Mathematical", type: "gardner" },
-        { id: 73, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya mudah membaca peta, bagan geometris, and senang menggambar objek 3 dimensi.", category: "Visual-Spatial", type: "gardner" },
-        { id: 74, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya memiliki imajinasi ruang yang baik dan peka terhadap kombinasi warna.", category: "Visual-Spatial", type: "gardner" },
-        { id: 75, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya mudah membayangkan visual bentuk bangunan utuh dari cetak biru dua dimensi.", category: "Visual-Spatial", type: "gardner" },
-        { id: 76, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya senang mengedit tata letak (*layout*) atau grafis halaman web.", category: "Visual-Spatial", type: "gardner" },
-        { id: 77, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya cepat mengenali rute jalan pintas baru ketika tersesat di kota lain.", category: "Visual-Spatial", type: "gardner" },
-        { id: 78, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya suka menyusun puzzle gambar rumit atau teka-teki susun bentuk.", category: "Visual-Spatial", type: "gardner" },
-        { id: 79, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya mudah mengenali nada, ritme ketukan instrumen, dan menghafal melodi lagu.", category: "Musical", type: "gardner" },
-        { id: 80, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya sering bersenandung atau mengetukkan jari mengikuti irama musik di sekitar.", category: "Musical", type: "gardner" },
-        { id: 81, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya peka membedakan harmonisasi suara sumbang pada paduan orkestra musik.", category: "Musical", type: "gardner" },
-        { id: 82, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya tertarik mempelajari teknik mengaransemen musik lewat aplikasi digital.", category: "Musical", type: "gardner" },
-        { id: 83, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya merasa ingatan saya lebih kuat jika materi diubah menjadi jingle bernada.", category: "Musical", type: "gardner" },
-        { id: 84, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya mudah menebak judul lagu hanya dengan mendengar petikan awal melodi.", category: "Musical", type: "gardner" },
-        { id: 85, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya terampil melakukan olahraga fisik, menari, atau merakit benda mekanis.", category: "Bodily-Kinesthetic", type: "gardner" },
-        { id: 86, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya lebih suka mempraktikkan langsung gerakan fisik daripada membaca manual teori.", category: "Bodily-Kinesthetic", type: "gardner" },
-        { id: 87, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya memiliki koordinasi motorik tubuh yang seimbang saat melakukan aksi lincah.", category: "Bodily-Kinesthetic", type: "gardner" },
-        { id: 88, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya senang mengekspresikan cerita lewat bahasa isyarat pantomim tubuh.", category: "Bodily-Kinesthetic", type: "gardner" },
-        { id: 89, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya cepat meniru koreografi tarian atau gerakan senam baru.", category: "Bodily-Kinesthetic", type: "gardner" },
-        { id: 90, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya menikmati pembuatan karya kriya tangan dari tanah liat atau kayu pahat.", category: "Bodily-Kinesthetic", type: "gardner" },
-        { id: 91, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya mudah memahami perasaan orang lain dan senang berorganisasi memimpin kelompok.", category: "Interpersonal", type: "gardner" },
-        { id: 92, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Teman-teman sering meminta masukan atau solusi masalah hubungan sosial kepada saya.", category: "Interpersonal", type: "gardner" },
-        { id: 93, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya pandai membaca perubahan suasana hati orang lain dari bahasa wajahnya.", category: "Interpersonal", type: "gardner" },
-        { id: 94, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya merasa nyaman berkenalan dan mengobrol akrab dengan orang asing baru.", category: "Interpersonal", type: "gardner" },
-        { id: 95, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya suka menyatukan visi anggota tim kelompok kerja agar kompak selalu.", category: "Interpersonal", type: "gardner" },
-        { id: 96, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya senang menyelenggarakan acara perkumpulan silaturahmi atau reuni akbar.", category: "Interpersonal", type: "gardner" },
-        { id: 97, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya sangat memahami kekuatan, kelemahan, serta tujuan visi hidup saya sendiri.", category: "Intrapersonal", type: "gardner" },
-        { id: 98, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya menyukai waktu merenung sendiri (*me-time*) untuk mengevaluasi diri saya.", category: "Intrapersonal", type: "gardner" },
-        { id: 99, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya mampu mengendalikan amarah stres dengan baik di bawah tekanan berat.", category: "Intrapersonal", type: "gardner" },
-        { id: 100, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya memiliki prinsip komitmen nilai integritas moral pribadi yang kokoh.", category: "Intrapersonal", type: "gardner" },
-        { id: 101, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya rutin menulis catatan diary harian untuk memetakan proses mental saya.", category: "Intrapersonal", type: "gardner" },
-        { id: 102, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya tahu persis apa pemicu kebahagiaan atau kesedihan utama jiwa saya.", category: "Intrapersonal", type: "gardner" },
-        { id: 103, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya peka terhadap kelestarian lingkungan, hewan, serta ekosistem alam tumbuhan.", category: "Naturalist", type: "gardner" },
-        { id: 104, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya merasa rileks dan segar saat berkegiatan di alam bebas/terbuka hijau.", category: "Naturalist", type: "gardner" },
-        { id: 105, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya suka mengidentifikasi jenis-jenis fauna satwa liar atau tumbuhan langka.", category: "Naturalist", type: "gardner" },
-        { id: 106, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya peduli memilah jenis sampah organik anorganik demi kelestarian bumi.", category: "Naturalist", type: "gardner" },
-        { id: 107, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya tertarik bercocok tanam hidroponik atau memelihara hewan peliharaan.", category: "Naturalist", type: "gardner" },
-        { id: 108, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya suka mengamati siklus pergantian musim atau fenomena cuaca alam sekitar.", category: "Naturalist", type: "gardner" },
+        // --- 2. GARDNER MIS (49 - 96 Nomor) ---
+        // Linguistic (6)
+        { id: 49, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya mudah mengingat kata-kata baru dan suka menulis artikel atau cerita.", category: "Linguistic", type: "gardner" },
+        { id: 50, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya suka membaca buku teks, novel, ataupun artikel berita secara rutin.", category: "Linguistic", type: "gardner" },
+        { id: 51, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya menikmati permainan kata seperti teka-teki silang atau scrabble.", category: "Linguistic", type: "gardner" },
+        { id: 52, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya pandai menjelaskan ide dengan menggunakan analogi bahasa yang tepat.", category: "Linguistic", type: "gardner" },
+        { id: 53, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya suka berdiskusi atau mendengarkan rekaman ceramah/podcast sastra.", category: "Linguistic", type: "gardner" },
+        { id: 54, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya merasa percaya diri ketika diminta berbicara atau berpidato di depan kelas.", category: "Linguistic", type: "gardner" },
+        // Logical-Mathematical (6)
+        { id: 55, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya cepat memahami rumus angka dan senang menganalisis pola logika matematika.", category: "Logical-Mathematical", type: "gardner" },
+        { id: 56, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya suka membuat hipotesis dan melakukan pembuktian ilmiah yang teratur.", category: "Logical-Mathematical", type: "gardner" },
+        { id: 57, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya suka memecahkan masalah hitungan rumit dengan langkah sistematis.", category: "Logical-Mathematical", type: "gardner" },
+        { id: 58, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya tertarik dengan cara kerja struktur pemrograman komputer atau algoritma.", category: "Logical-Mathematical", type: "gardner" },
+        { id: 59, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya selalu mengelompokkan barang atau tugas berdasarkan logika klasifikasi.", category: "Logical-Mathematical", type: "gardner" },
+        { id: 60, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya senang meneliti kebenaran argumen berdasarkan data empiris.", category: "Logical-Mathematical", type: "gardner" },
+        // Visual-Spatial (6)
+        { id: 61, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya mudah membaca peta, bagan geometris, dan senang menggambar objek 3 dimensi.", category: "Visual-Spatial", type: "gardner" },
+        { id: 62, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya memiliki imajinasi ruang yang baik dan peka terhadap kombinasi warna.", category: "Visual-Spatial", type: "gardner" },
+        { id: 63, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya lebih mudah mengingat wajah orang daripada mengingat nama mereka.", category: "Visual-Spatial", type: "gardner" },
+        { id: 64, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya senang mengedit video, merancang ilustrasi, atau membuat infografis.", category: "Visual-Spatial", type: "gardner" },
+        { id: 65, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya suka memperhatikan tata letak arsitektur atau desain suatu ruangan.", category: "Visual-Spatial", type: "gardner" },
+        { id: 66, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya bisa membayangkan bentuk suatu benda dari berbagai sudut pandang pikiran.", category: "Visual-Spatial", type: "gardner" },
+        // Bodily-Kinesthetic (6)
+        { id: 67, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya terampil melakukan olahraga fisik, menari, atau merakit benda mekanis.", category: "Bodily-Kinesthetic", type: "gardner" },
+        { id: 68, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya lebih suka mempraktikkan langsung gerakan fisik daripada membaca manual teori.", category: "Bodily-Kinesthetic", type: "gardner" },
+        { id: 69, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya memiliki keseimbangan tubuh dan koordinasi gerak motorik yang baik.", category: "Bodily-Kinesthetic", type: "gardner" },
+        { id: 70, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya menikmati membuat kerajinan tangan, memahat, atau membongkar alat.", category: "Bodily-Kinesthetic", type: "gardner" },
+        { id: 71, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya mengekspresikan diri secara aktif menggunakan bahasa tubuh/gestur.", category: "Bodily-Kinesthetic", type: "gardner" },
+        { id: 72, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya merasa cepat lelah jika dipaksa duduk diam terlalu lama tanpa bergerak.", category: "Bodily-Kinesthetic", type: "gardner" },
+        // Musical (6)
+        { id: 73, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya mudah mengenali nada, ritme ketukan instrumen, dan menghafal melodi lagu.", category: "Musical", type: "gardner" },
+        { id: 74, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya sering bersenandung atau mengetukkan jari mengikuti irama musik di sekitar.", category: "Musical", type: "gardner" },
+        { id: 75, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya peka jika mendengar suara alat musik yang sumbang atau keluar dari ritme.", category: "Musical", type: "gardner" },
+        { id: 76, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya bisa membedakan karakter suara berbagai instrumen musik yang berbeda.", category: "Musical", type: "gardner" },
+        { id: 77, section: "Sesi 2: MIS Gardner (Musical)", text: "Belajar sambil mendengarkan instrumental musik membantu konsentrasi saya.", category: "Musical", type: "gardner" },
+        { id: 78, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya tertarik mempelajari teknik aransemen lagu atau bermain alat musik.", category: "Musical", type: "gardner" },
+        // Interpersonal (6)
+        { id: 79, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya mudah memahami perasaan orang lain dan senang berorganisasi memimpin kelompok.", category: "Interpersonal", type: "gardner" },
+        { id: 80, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Teman-teman sering meminta masukan atau solusi masalah hubungan sosial kepada saya.", category: "Interpersonal", type: "gardner" },
+        { id: 81, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya menikmati proses berkenalan dan bergaul dengan orang-orang baru.", category: "Interpersonal", type: "gardner" },
+        { id: 82, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya pandai membaca isyarat wajah dan suasana hati lawan bicara saya.", category: "Interpersonal", type: "gardner" },
+        { id: 83, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya menyukai kerja kelompok yang membutuhkan mediasi atau musyawarah.", category: "Interpersonal", type: "gardner" },
+        { id: 84, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya suka menyemangati orang lain yang sedang merasa putus asa.", category: "Interpersonal", type: "gardner" },
+        // Intrapersonal (6)
+        { id: 85, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya sangat memahami kekuatan, kelemahan, serta tujuan visi hidup saya sendiri.", category: "Intrapersonal", type: "gardner" },
+        { id: 86, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya menyukai waktu merenung sendiri (*me-time*) untuk mengevaluasi diri saya.", category: "Intrapersonal", type: "gardner" },
+        { id: 87, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya memiliki motivasi internal yang kuat untuk sukses tanpa perlu disuruh.", category: "Intrapersonal", type: "gardner" },
+        { id: 88, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya terbiasa menulis buku harian, jurnal refleksi, atau rencana pribadi.", category: "Intrapersonal", type: "gardner" },
+        { id: 89, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya berani mengambil sikap mandiri yang berbeda dari tren mayoritas.", category: "Intrapersonal", type: "gardner" },
+        { id: 90, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya tahu persis apa konsekuensi emosional dari setiap keputusan saya.", category: "Intrapersonal", type: "gardner" },
+        // Naturalist (6)
+        { id: 91, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya peka terhadap kelestarian lingkungan, hewan, serta ekosistem alam tumbuhan.", category: "Naturalist", type: "gardner" },
+        { id: 92, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya merasa rileks dan segar saat berkegiatan di alam bebas/terbuka hijau.", category: "Naturalist", type: "gardner" },
+        { id: 93, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya tertarik mempelajari siklus cuaca, botani, zoologi, atau geografi.", category: "Naturalist", type: "gardner" },
+        { id: 94, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya suka merawat hewan piaraan atau menanam tanaman hias di rumah.", category: "Naturalist", type: "gardner" },
+        { id: 95, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya mudah membedakan varietas jenis flora atau fauna di sekitar saya.", category: "Naturalist", type: "gardner" },
+        { id: 96, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya aktif mempraktikkan gerakan membuang sampah pada tempatnya dan daur ulang.", category: "Naturalist", type: "gardner" },
 
-        // --- 3. VAK GAYA BELAJAR (109 - 126) --- Total: 18 Soal (Ditambah 9 Soal Baru)
-        { id: 109, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya lebih cepat paham jika guru menjelaskan materi memakai slide, grafik, atau video.", category: "Visual", type: "vak" },
-        { id: 110, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya suka mencatat pelajaran dengan penanda berwarna-warni atau mind mapping.", category: "Visual", type: "vak" },
-        { id: 111, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya sering mengingat detail tata letak tulisan atau gambar di dalam buku teks.", category: "Visual", type: "vak" },
-        { id: 112, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya merasa pusing jika harus membaca tulisan panjang yang tidak ada gambarnya.", category: "Visual", type: "vak" },
-        { id: 113, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya lebih mudah memahami instruksi rakitan berupa gambar skema simbol.", category: "Visual", type: "vak" },
-        { id: 114, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya menyukai tontonan infografis animasi bergerak untuk belajar teori baru.", category: "Visual", type: "vak" },
-        { id: 115, section: "Sesi 3: Gaya Belajar (Auditori)", text: "Saya lebih mudah menyerap ilmu dengan mendengarkan ceramah atau diskusi kelompok.", category: "Auditori", type: "vak" },
-        { id: 116, section: "Sesi 3: Gaya Belajar (Auditori)", text: "Saya lebih suka membaca teks materi pelajaran dengan suara keras agar mudah masuk ingatan.", category: "Auditori", type: "vak" },
-        { id: 117, section: "Sesi 3: Gaya Belajar (Auditori)", text: "Saya mudah terganggu oleh kebisingan sekitar sewaktu fokus belajar.", category: "Auditori", type: "vak" },
-        { id: 118, section: "Sesi 3: Gaya Belajar (Auditori)", text: "Saya senang mendengarkan penjelasan materi berulang lewat format audio/podcast.", category: "Auditori", type: "vak" },
-        { id: 119, section: "Sesi 3: Gaya Belajar (Auditori)", text: "Saya mengingat petunjuk lisan guru dengan sangat detail tanpa perlu mencatat.", category: "Auditori", type: "vak" },
-        { id: 120, section: "Sesi 3: Gaya Belajar (Auditori)", text: "Saya lebih suka mendiskusikan jawaban soal secara verbal dengan teman sebangku.", category: "Auditori", type: "vak" },
-        { id: 121, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya paling suka metode eksperimen praktek lab atau bergerak memegang alat simulasi.", category: "Kinestetik", type: "vak" },
-        { id: 122, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya sulit duduk diam dalam waktu sangat lama dan suka berjalan/menggerakkan kaki saat menghafal.", category: "Kinestetik", type: "vak" },
-        { id: 123, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya senang menggunakan objek fisik nyata sebagai media bantu menguraikan konsep logika.", category: "Kinestetik", type: "vak" },
-        { id: 124, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya terbiasa menggunakan banyak gerakan tangan interaktif sewaktu berbicara.", category: "Kinestetik", type: "vak" },
-        { id: 125, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya lebih mudah mengingat pelajaran jika saya pernah menuliskannya di papan tulis.", category: "Kinestetik", type: "vak" },
-        { id: 126, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya suka melakukan permainan peran (*role-play*) drama simulasi di kelas.", category: "Kinestetik", type: "vak" }
+        // --- 3. VAK GAYA BELAJAR (97 - 126 Nomor) ---
+        // Visual (10)
+        { id: 97, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya lebih cepat paham jika guru menjelaskan materi memakai slide, grafik, atau video.", category: "Visual", type: "vak" },
+        { id: 98, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya suka mencatat pelajaran dengan penanda berwarna-warni atau mind mapping.", category: "Visual", type: "vak" },
+        { id: 99, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya sering mengingat detail tata letak tulisan atau gambar di dalam buku teks.", category: "Visual", type: "vak" },
+        { id: 100, section: "Sesi 3: Gaya Belajar (Visual)", text: "Membaca komik atau infografis lebih menyenangkan bagi saya daripada novel teks polos.", category: "Visual", type: "vak" },
+        { id: 101, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya merasa terganggu saat belajar jika dekorasi di sekeliling ruangan berantakan.", category: "Visual", type: "vak" },
+        { id: 102, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya cenderung memejamkan mata untuk membayangkan kembali catatan saat ujian.", category: "Visual", type: "vak" },
+        { id: 103, section: "Sesi 3: Gaya Belajar (Visual)", text: "Petunjuk berupa bagan alur diagram membantu saya bekerja lebih efisien.", category: "Visual", type: "vak" },
+        { id: 104, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya suka menonton video animasi demonstrasi ilmu untuk memahami teori abstrak.", category: "Visual", type: "vak" },
+        { id: 105, section: "Sesi 3: Gaya Belajar (Visual)", text: "Catatan yang rapi dengan struktur visual yang cantik membuat saya semangat belajar.", category: "Visual", type: "vak" },
+        { id: 106, section: "Sesi 3: Gaya Belajar (Visual)", text: "Saya lebih suka membaca materi sendiri daripada dibacakan oleh orang lain.", category: "Visual", type: "vak" },
+        // Auditory (10)
+        { id: 107, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya lebih mudah menyerap ilmu dengan mendengarkan ceramah atau diskusi kelompok.", category: "Auditory", type: "vak" },
+        { id: 108, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya lebih suka membaca teks materi pelajaran dengan suara keras agar mudah masuk ingatan.", category: "Auditory", type: "vak" },
+        { id: 109, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya mudah terganggu oleh kebisingan sekitar sewaktu fokus belajar.", category: "Auditory", type: "vak" },
+        { id: 110, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya lebih suka mendengarkan penjelasan langsung daripada membaca petunjuk teks tertulis.", category: "Auditory", type: "vak" },
+        { id: 111, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya pandai menirukan intonasi, logat, atau gaya bicara guru di depan kelas.", category: "Auditory", type: "vak" },
+        { id: 112, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Berdiskusi dua arah dengan teman membantu mengurai kebuntuan berpikir saya.", category: "Auditory", type: "vak" },
+        { id: 113, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya menyukai media podcast audio pembelajaran untuk mengisi waktu luang.", category: "Auditory", type: "vak" },
+        { id: 114, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya mudah mengingat lirik lagu atau ucapan seseorang secara spesifik.", category: "Auditory", type: "vak" },
+        { id: 115, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Saya sering mengulang kata-kata secara lirih di mulut saat sedang menghafal.", category: "Auditory", type: "vak" },
+        { id: 116, section: "Sesi 3: Gaya Belajar (Auditory)", text: "Pemberian instruksi lisan secara berurutan memudahkan saya menyelesaikan tugas.", category: "Auditory", type: "vak" },
+        // Kinesthetic_VAK (10)
+        { id: 117, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya paling suka metode eksperimen praktek lab atau bergerak memegang alat simulasi.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 118, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya sulit duduk diam dalam waktu sangat lama dan suka berjalan/menggerakkan kaki saat menghafal.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 119, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya senang menggunakan objek fisik nyata sebagai media bantu menguraikan konsep logika.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 120, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Mengetik di komputer atau menulis di papan tulis membantu konsentrasi materi saya.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 121, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya sering menyentuh barang atau menggunakan gestur tangan saat berbicara.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 122, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Kegiatan belajar lapangan (outing) memberikan dampak paham yang lebih mendalam.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 123, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya suka mencoba membongkar pasang mainan/alat elektronik untuk tahu cara kerjanya.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 124, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Membuat model maket fisik membuat pemahaman materi saya menjadi utuh.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 125, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Saya lebih cepat menguasai keahlian baru dengan meniru tindakan langsung instruktur.", category: "Kinesthetic_VAK", type: "vak" },
+        { id: 126, section: "Sesi 3: Gaya Belajar (Kinestetik)", text: "Menyelingi belajar mandiri dengan peregangan fisik pendek membuat otak saya segar kembali.", category: "Kinesthetic_VAK", type: "vak" }
     ];
 
     const recommendations = {
-        "Realistic": "Fokus pada penguasaan kompetensi praktis tingkat tinggi, rekayasa mekanis, alat berat, otomatisasi industri, proyek konstruksi fisik, atau optimalisasi laboratorium terapan.",
-        "Investigative": "Sangat direkomendasikan masuk tim riset ilmiah sekolah, olimpiade sains/matematika, analisis data digital, pemrograman sistem kendali kompleks, atau bidang penelitian teknologi mendalam.",
-        "Artistic": "Gali potensi industri kreatif melalui penugasan desain multimedia, UI/UX creator, penyusunan arsitektur estetik, copywriter kampanye digital, atau tata artistik produksi penyiaran.",
-        "Social": "Optimalkan peran sebagai konselor sebaya, koordinator pengabdian masyarakat, edukator tim pelatihan kerja, fasilitator humas, atau pelopor program kerja sama kepemudaan.",
-        "Enterprising": "Sangat adaptif menjadi pemimpin proyek inovasi bisnis kreatif, manajer eksekutif event sekolah, negosiator bisnis startup, atau pengarah strategi pemasaran komersial.",
-        "Conventional": "Sangat unggul dalam pengolahan sistem manajemen audit akuntansi, penyusunan pangkalan data (*database*), ketertiban administrasi perkantoran, akurasi laporan pajak, serta manajemen logistik terstruktur.",
+        Realistic: "Tipe Karir Realistik (Praktis, Fisik, & Solutif Fisik): Tipe ini mencerminkan pribadi yang menyukai kerja nyata yang melibatkan interaksi langsung dengan mesin, peralatan teknik, perakitan perangkat keras, atau aktivitas luar ruangan. Anda lebih suka memecahkan masalah praktis dibanding teori abstrak.<br>Rekomendasi Karir Masa Depan: Teknik Komputer & Jaringan (TJKT), Teknisi Elektronika, Mekanik Otomotif, Operator Alat Berat, Ahli Logistik, serta Arsitek Lapangan.",
+        Investigative: "Tipe Karir Investigatif (Analitis, Kritis, & Riset Ilmiah): Tipe ini mencerminkan pribadi yang senang mengamati, menyelidiki, mengevaluasi fakta, dan menganalisis data untuk menemukan jawaban logis. Anda memiliki rasa ingin tahu yang sangat besar dan tajam dalam problem-solving abstrak.<br>Rekomendasi Karir Masa Depan: Software Developer (PPLG), Data Analyst, Security Engineer/Cyber Security, Laboran Kimia/Biologi, Peneliti, Sistem Analis, dan Aktuaris.",
+        Artistic: "Tipe Karir Artistik (Kreatif, Imajinatif, & Ekspresif): Tipe ini mencerminkan pribadi yang menyukai kebebasan dalam berkarya, berinovasi secara estetik, dan mengekspresikan diri tanpa batasan kaku. Anda sangat peka terhadap elemen visual, komposisi, atau alur cerita kreatif.<br>Rekomendasi Karir Masa Depan: Desainer Grafis (DKV), UI/UX Designer, Video Editor, Animator 2D/3D, Fotografer, Content Creator, dan Creative Director.",
+        Social: "Tipe Karir Sosial (Edukasi, Pelayanan, & Pemberdayaan Manusia): Tipe ini mencerminkan pribadi yang memiliki empati tinggi, senang membantu, merawat, mengajar, serta membimbing orang lain. Anda sangat andal dalam berkomunikasi interpersonal dan membangun hubungan harmonis dalam kelompok.<br>Rekomendasi Karir Masa Depan: Konselor/Guru BK, Public Relations (Humas), Spesialis Rekrutmen (HRD), Customer Relations Management, Guru Kejuruan, dan Mediator Sosial.",
+        Enterprising: "Tipe Karir Enterprising (Persuasif, Bisnis, & Kepemimpinan): Tipe ini mencerminkan pribadi yang penuh energi, berani mengambil risiko, memiliki ambisi kuat, serta cakap memengaruhi orang lain untuk mencapai tujuan strategis. Anda sangat menyukai tantangan kompetitif dan pengelolaan finansial.<br>Rekomendasi Karir Masa Depan: Digital Entrepreneur (Bisnis Pemasaran), Manajer Operasional, Sales Strategist, Startup Founder, Project Manager, dan Konsultan Bisnis.",
+        Conventional: "Tipe Karir Konvensional (Terstruktur, Terorganisir, & Akurat): Tipe ini mencerminkan pribadi yang sangat rapi, disiplin terhadap aturan kerja baku, teliti dalam mengelola pembukuan, data digital, atau dokumen resmi. Anda adalah pilar penting dalam memastikan akurasi data organisasi.<br>Rekomendasi Karir Masa Depan: Akuntan Publik (AKL), Staf Administrasi Perkantoran (MPLB), Data Entry Specialist, Auditor Keuangan, dan Database Administrator.",
         
-        "Linguistic": "Aktif di majalah dinding sekolah, klub debat internasional, kelas penulisan karya ilmiah, atau pemandu acara (MC) kegiatan lembaga resmi.",
-        "Logical-Mathematical": "Arahkan pada penguasaan kecerdasan buatan (*AI*), logika statistika, algoritma coding tingkat lanjut, akuntansi forensik, serta analisis sistem keuangan makro.",
-        "Visual-Spatial": "Kembangkan bakat pemodelan CAD 3D, animasi digital, editing sinematografi profesional, arsitektur rancang ruang, atau kurator galeri seni visual modern.",
-        "Musical": "Salurkan pada aransemen musik digital (*audio engineering*), pengarah vokal paduan suara, penguasaan instrumen orkestra, atau inovator media terapi audio edukatif.",
-        "Bodily-Kinesthetic": "Maksimalkan performa di atletik prestasi olahraga, teater gerak ekspresif, manufaktur robotika presisi, atau bidang keselamatan kerja operasional lapangan tinggi.",
-        "Interpersonal": "Arahkan menjadi ketua organisasi intra sekolah, duta komunikasi publik, manajemen sumber daya manusia (HRD), diplomat muda, atau koordinator relasi eksternal institusi.",
-        "Intrapersonal": "Sangat ideal dalam menyusun jurnal refleksi diri mandiri, perencana keputusan strategis masa depan, analis kepribadian psikologi mandiri, atau penulis buku motivasi filosofis.",
-        "Naturalist": "Kembangkan proyek konservasi biologi, manajemen agribisnis ramah lingkungan, pengolahan limbah industri hijau, pelestarian satwa, atau eksplorasi botani pariwisata.",
+        Linguistic: "Kecerdasan Linguistik (Kecakapan Kata & Bahasa): Anda memiliki kemampuan tinggi dalam menyusun kalimat, memahami makna tekstual, dan menyampaikan pendapat secara lisan maupun tulisan dengan sangat terstruktur.<br>Rekomendasi Kegiatan Ekstrakurikuler: Debat Bahasa, Jurnalistik/Mading Sekolah, Club Bahasa Asing, Teater, dan Komunitas Podcast Kreatif.",
+        "Logical-Mathematical": "Kecerdasan Logika-Matematika (Pola Pikir Kritis & Sistematis): Anda sangat andal dalam menganalisis data angka, mencari hubungan sebab-akibat, memprogram alur logika berpikir, dan memecahkan teka-teki taktis.<br>Rekomendasi Kegiatan Ekstrakurikuler: Coding & Programming Club, Robotik Club, Kelompok Olimpiade Matematika, dan Komunitas Catur.",
+        "Visual-Spatial": "Kecerdasan Visual-Spasial (Imajinasi Ruang & Bentuk): Anda mampu memetakan gambaran visual 3 dimensi dalam pikiran dengan baik, peka terhadap perpaduan warna, komposisi desain, serta detail tata letak objek fisik.<br>Rekomendasi Kegiatan Ekstrakurikuler: Fotografi & Videografi, Desain Grafis Mandiri, Seni Lukis/Rupa, dan Sinematografi Sekolah.",
+        "Bodily-Kinesthetic": "Kecerdasan Kinestetik Tubuh (Koordinasi Motorik & Praktik Fisik): Anda memiliki kontrol keseimbangan tubuh yang luar biasa, terampil dalam memanipulasi objek fisik menggunakan tangan, dan cepat belajar melalui gerakan fisik nyata.<br>Rekomendasi Kegiatan Ekstrakurikuler: Klub Olahraga (Futsal, Basket, Voli), Pencak Silat/Taekwondo, Seni Tari Tradisional/Modern, dan Paskibraka.",
+        Musical: "Kecerdasan Musikal (Kepekaan Nada & Ritme): Anda memiliki sensitivitas tinggi terhadap ketukan instrumen, harmoni suara, perubahan nada, dan mudah mengingat struktur lirik atau komposisi lagu baru.<br>Rekomendasi Kegiatan Ekstrakurikuler: Paduan Suara, Drumband/Marching Band, Band Sekolah, dan Ansambel/Kolektif Musik Tradisional.",
+        Interpersonal: "Kecerdasan Interpersonal (Kecakapan Relasi & Hubungan Sosial): Anda sangat mudah beradaptasi di lingkungan baru, andal membaca emosi orang di sekitar, serta mampu memimpin organisasi dengan pendekatan komunikatif yang baik.<br>Rekomendasi Kegiatan Ekstrakurikuler: Pengurus OSIS/MPK, PMR (Palang Merah Remaja), Pramuka Inti, dan Kepanitiaan Event Sekolah.",
+        Intrapersonal: "Kecerdasan Intrapersonal (Kesadaran Diri & Kedalaman Refleksi): Anda memiliki pemahaman yang sangat mendalam tentang jati diri, kelemahan, kelebihan, serta prinsip hidup pribadi. Anda sangat mandiri dan mampu memotivasi diri tanpa paksaan luar.<br>Rekomendasi Kegiatan Ekstrakurikuler: Karya Ilmiah Remaja (KIR), Klub Jurnal Opini, Komunitas Literasi Buku, dan Forum Diskusi Filsafat/Psikologi.",
+        Naturalist: "Kecerdasan Naturalis (Kepedulian Lingkungan & Ekosistem): Anda memiliki kepekaan mendalam terhadap alam sekitar, ekosistem flora/fauna, dan sangat peduli terhadap kelestarian lingkungan hidup dari kerusakan.<br>Rekomendasi Kegiatan Ekstrakurikuler: Siswa Pencinta Alam (Sispala), Komunitas Go-Green Sekolah, Kegiatan Berkebun Hidroponik, dan Pencinta Satwa.",
         
-        "Visual": "Maksimalkan efisiensi penyerapan ilmu dengan skema infografis, video tutorial berkualitas tinggi, buku teks berilustrasi penuh warna, penggunaan tabel komparasi, serta pembuatan peta konsep terpadu.",
-        "Auditori": "Gunakan teknik rekaman audio ringkasan materi, berpartisipasi aktif dalam sesi diskusi interaktif tatap muka, memanfaatkan podcast pembelajaran, serta melakukan metode mengajar teman sebaya.",
-        "Kinestetik": "Terapkan metode simulasi interaktif (*role play*), jeda istirahat berkala sistem Pomodoro, pembuatan maket fisik konseptual, eksperimen praktikum mandiri, serta pencatatan sambil melakukan aktivitas fisik ringan."
+        Visual: "Gaya Belajar Visual (Optimal Melalui Penglihatan): Anda menyerap informasi baru dengan sangat maksimal ketika melihat materi dalam bentuk visual berwarna, grafik, infografis, atau demonstrasi video animasi.<br>Strategi Belajar Terbaik: Gunakan peta pikiran (mind mapping), gunakan stabilo berwarna untuk menandai poin krusial di buku teks, dan tonton video penjelasan berbasis ilustrasi visual.",
+        Auditory: "Gaya Belajar Auditori (Optimal Melalui Pendengaran & Diskusi): Anda memproses informasi pelajaran dengan sangat cepat saat mendengar penjelasan lisan, berdiskusi dua arah, atau mendengarkan penuturan verbal guru secara langsung.<br>Strategi Belajar Terbaik: Ikuti diskusi kelompok aktif, rekam penjelasan materi lalu dengarkan kembali, atau baca materi teks secara lirih agar suara terdengar oleh telinga sendiri.",
+        Kinesthetic_VAK: "Gaya Belajar Kinestetik (Optimal Melalui Gerakan & Praktik Nyata): Anda memahami ilmu baru secara mendalam ketika melibatkan aktivitas motorik tubuh, melakukan simulasi langsung di laboratorium, atau menyentuh objek fisik yang dipelajari.<br>Strategi Belajar Terbaik: Manfaatkan sesi praktik kerja lapangan secara total, gunakan alat peraga fisik saat menghitung rumus, dan selingi belajar mandiri dengan jeda istirahat peregangan pendek agar otak tetap bugar."
     };
 
     let currentIndex = 0;
@@ -818,6 +826,7 @@
     }
 
     function startTimer() {
+        clearInterval(timerInterval);
         timerInterval = setInterval(() => {
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
@@ -958,20 +967,20 @@
             "Bodily-Kinesthetic": 0, "Interpersonal": 0, "Intrapersonal": 0, "Naturalist": 0 
         };
 
-        let vakScores = { "Visual": 0, "Auditori": 0, "Kinestetik": 0 };
-        let vakCounts = { "Visual": 0, "Auditori": 0, "Kinestetik": 0 };
+        let vakScores = { "Visual": 0, "Auditory": 0, "Kinesthetic_VAK": 0 };
+        let vakCounts = { "Visual": 0, "Auditory": 0, "Kinesthetic_VAK": 0 };
 
         questions.forEach(q => {
             let val = answers[q.id] || 0;
             if (q.type === 'riasec') {
                 riasecScores[q.category] += val;
-                riasecCounts[q.category] += 4;
+                riasecCounts[q.category] += 4; 
             } else if (q.type === 'gardner') {
                 gardnerScores[q.category] += val;
-                gardnerCounts[q.category] += 4;
+                gardnerCounts[q.category] += 4; 
             } else if (q.type === 'vak') {
                 vakScores[q.category] += val;
-                vakCounts[q.category] += 2;
+                vakCounts[q.category] += 2; 
             }
         });
 
@@ -993,8 +1002,6 @@
         document.title = `Hasil Asesmen BK - ${studentData.nama} - ${studentData.asal}`;
         document.getElementById('res-header-school').innerText = studentData.asal;
         document.getElementById('res-nama').innerText = studentData.nama;
-        
-        // MENAMPILKAN NISN SISWA PADA HASIL ASESMEN BIODATA LAPORAN
         document.getElementById('res-nisn').innerText = studentData.nisn;
         document.getElementById('res-kelas').innerText = studentData.kelas;
         document.getElementById('res-keahlian').innerText = studentData.keahlian;
@@ -1015,42 +1022,42 @@
         const tbody = document.getElementById('dynamic-table-rows');
         tbody.innerHTML = "";
 
-        // HANYA MENGAMBIL 3 PERSENTASE TERATAS UNTUK RIASEC
-        let topThreeRiasec = finalRiasec.slice(0, 3);
-        topThreeRiasec.forEach((item, idx) => {
+        finalRiasec.forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
-                rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-riasec) !important;"><strong>1. Minat Karir / Tipologi Kerja</strong><br><small>(Holland RIASEC Model)</small></td>`;
+                rowHTML += `<td rowspan="6" style="vertical-align: middle; background-color: var(--box-riasec) !important;"><strong>1. Minat Karir / Tipologi Kerja</strong><br><small>(Holland RIASEC Model)</small></td>`;
             }
             rowHTML += `<td style="background-color: var(--box-riasec) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-riasec) !important;"><strong>${item.percent}%</strong></td>`;
-            rowHTML += `<td style="background-color: var(--box-riasec) !important;">${recommendations[item.name]}</td>`;
+            rowHTML += `<td style="background-color: var(--box-riasec) !important;">${recommendations[item.name] || 'Deskripsi tidak ditemukan'}</td>`;
             rowHTML += "</tr>";
             tbody.innerHTML += rowHTML;
         });
 
-        // HANYA MENGAMBIL 3 PERSENTASE TERATAS UNTUK MIS GARDNER
-        let topThreeGardner = finalGardner.slice(0, 3);
-        topThreeGardner.forEach((item, idx) => {
+        finalGardner.forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
-                rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-gardner) !important;"><strong>2. Potensi Kecerdasan Majemuk</strong><br><small>(Multiple Intelligences Gardner)</small></td>`;
+                rowHTML += `<td rowspan="8" style="vertical-align: middle; background-color: var(--box-gardner) !important;"><strong>2. Potensi Kecerdasan Majemuk</strong><br><small>(Multiple Intelligences Gardner)</small></td>`;
             }
             rowHTML += `<td style="background-color: var(--box-gardner) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-gardner) !important;"><strong>${item.percent}%</strong></td>`;
-            rowHTML += `<td style="background-color: var(--box-gardner) !important;">${recommendations[item.name]}</td>`;
+            rowHTML += `<td style="background-color: var(--box-gardner) !important;">${recommendations[item.name] || 'Deskripsi tidak ditemukan'}</td>`;
             rowHTML += "</tr>";
             tbody.innerHTML += rowHTML;
         });
 
-        // HANYA MENGAMBIL GAYA BELAJAR TERATINGGI SAJA (1 TERATAS)
-        let topOneVak = finalVak.slice(0, 1);
-        topOneVak.forEach((item, idx) => {
+        finalVak.forEach((item, idx) => {
+            let displayName = item.name;
+            if (displayName === "Auditory") displayName = "Auditori (Auditory)";
+            if (displayName === "Kinesthetic_VAK") displayName = "Kinestetik (Kinesthetic)";
+            
             let rowHTML = "<tr>";
-            rowHTML += `<td style="vertical-align: middle; background-color: var(--box-vak) !important;"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
-            rowHTML += `<td style="background-color: var(--box-vak) !important;">Hasil Dominan: <strong>${item.name}</strong></td>`;
+            if(idx === 0) {
+                rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-vak) !important;"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
+            }
+            rowHTML += `<td style="background-color: var(--box-vak) !important;">Peringkat ${idx+1}: <strong>${displayName}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-vak) !important;"><strong>${item.percent}%</strong></td>`;
-            rowHTML += `<td style="background-color: var(--box-vak) !important;">${recommendations[item.name]}</td>`;
+            rowHTML += `<td style="background-color: var(--box-vak) !important;">${recommendations[item.name] || 'Deskripsi tidak ditemukan'}</td>`;
             rowHTML += "</tr>";
             tbody.innerHTML += rowHTML;
         });
