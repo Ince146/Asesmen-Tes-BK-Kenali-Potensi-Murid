@@ -400,6 +400,15 @@
                 margin: 0 0 5px 0 !important;
             }
 
+            /* Pengaturan Tambahan Agar Pas 2 Halaman */
+            .pdf-header-container {
+                page-break-before: always; /* Memaksa lembar hasil laporan BK mulai tepat di awal halaman ke-2 */
+            }
+            
+            .signature-section {
+                page-break-inside: avoid; /* Mencegah kolom tanda tangan terpotong di batas bawah kertas */
+            }
+
             h3, .judul-laporan {
                 font-size: 20pt !important;
                 margin-top: 15px !important;
@@ -1063,7 +1072,41 @@
     }
 
     function handleDownloadPDF() {
+        // --- 1. OTOMATISASI NAMA KOTA SEBELUM TANGGAL ---
+        // Mengambil nama sekolah atau kota asal dari input biodata (menggunakan input-asal atau default "Kota Sekolah")
+        const fullSchoolInput = document.getElementById('input-asal').value || "";
+        // Mencari kata setelah 'SMK' atau mengambil kata terakhir sebagai asumsi kota sekolah
+        let schoolCity = "Kota Sekolah";
+        if (fullSchoolInput) {
+            const words = fullSchoolInput.split(' ');
+            schoolCity = words[words.length - 1] || "Kota Sekolah";
+        }
+        
+        // Format tanggal hari ini (Tanggal Bulan Tahun)
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = new Date().toLocaleDateString('id-ID', options);
+        
+        // Memasukkan nama kota sekolah ke dalam label tanda tangan
+        document.getElementById('current-date-lbl').innerText = `${schoolCity}, ${formattedDate}`;
+
+        // --- 2. OTOMATISASI NAMA FILE PDF ---
+        // Mengambil data siswa dari formulir input biodata
+        const sName = document.getElementById('input-nama').value || "Siswa";
+        const sNisn = document.getElementById('input-nisn').value || "NISN";
+        const sClass = document.getElementById('input-kelas').value || "Kelas";
+        const sMajor = document.getElementById('input-keahlian').value || "Jurusan";
+        
+        // Mengubah judul tab browser sementara agar saat di-save PDF nama filenya otomatis sesuai format
+        const originalTitle = document.title;
+        document.title = `${sName}_${sNisn}_${sClass}_${sMajor}`;
+        
+        // Membuka dialog cetak PDF browser
         window.print();
+        
+        // Mengembalikan judul dokumen tab semula setelah jendela cetak muncul
+        document.title = originalTitle;
+        
+        // Menampilkan tombol kembali ke halaman awal
         document.getElementById('btn-restart-page').style.display = "inline-block";
     }
 
