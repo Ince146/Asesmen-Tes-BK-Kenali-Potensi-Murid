@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBT Asesmen BK - Kenali Potensi Murid</title>
+    <title>CBT Asesmen BK - SMKN 1 Pangkajene dan Kepulauan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,1043 +23,1081 @@
             --status-unanswered: #f59e0b;
             --status-current: #3b82f6;
             --purple-bright: #6366f1;
-            --box-riasec: #fff7ed;
-            --box-gardner: #f3e8ff;
-            --box-vak: #f0fdf4;
+            
+            /* Warna Latar Belakang Kotak Sesuai Request */
+            --box-riasec: #e8f5e9; 
+            --box-gardner: #e3f2fd; 
+            --box-vak: #efebe9; 
+            --pdf-orange-light: #fff3e0; 
+            --pdf-purple-light: #f3e5f5; 
         }
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.5;
-            padding-bottom: 40px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #000000;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* HEADER */
-        header {
-            background-color: #ffffff;
-            border-bottom: 2px solid var(--border-color);
-            padding: 15px 0;
-            margin-bottom: 30px;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand h1 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-
-        .brand p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .timer-box {
-            background-color: var(--dark);
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* START PAGE / BIODATA */
-        .card {
+            width: 100%;
+            max-width: 1050px;
             background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 600px;
-            margin: 40px auto;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
         }
 
-        .welcome-box {
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 8px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--status-current) 50%, var(--secondary) 100%);
+        }
+
+        /* CARD MOTIVASI "KENALI POTENSIMU" */
+        .welcome-motivation-card {
+            background: #f0fdf4; 
+            border-left: 6px solid #16a34a; 
+            padding: 24px;
+            border-radius: 16px;
+            margin: 25px 0;
+            text-align: left;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+        }
+
+        .motivation-title {
+            color: #16a34a;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.05em;
             text-align: center;
-            margin-bottom: 25px;
         }
 
-        .logo-container {
+        .motivation-subtitle {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0 0 12px 0;
+        }
+
+        .motivation-body {
+            color: #334155;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .motivation-quote {
+            background: #e2fbf0;
+            border-left: 4px solid #10b981;
+            margin: 15px 0;
+            padding: 12px 16px;
+            font-style: italic;
+            color: #065f46;
+            font-weight: 600;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .motivation-footer {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 15px 0 0 0;
+            text-align: center;
+        }
+
+        .info-box-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .info-card {
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px solid #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .info-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .info-card h4 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #000000;
+        }
+
+        .info-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #000000;
+        }
+
+        .card-riasec { background-color: var(--box-riasec); }
+        .card-gardner { background-color: var(--box-gardner); }
+        .card-vak { background-color: var(--box-vak); }
+
+        .pdf-header-container {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            border-bottom: 4px double #000000 !important;
+            padding-bottom: 12px !important;
+            margin-bottom: 25px !important;
+            gap: 10px !important;
+            width: 100% !important;
+        }
+
+        .header-logo {
+            width: 60px !important;
+            height: 60px !important;
+            max-width: 60px !important;
+            max-height: 60px !important;
+            object-fit: contain !important;
+            flex-shrink: 0 !important;
+        }
+
+        .header-text {
+            text-align: center !important;
+            flex-grow: 1 !important;
+        }
+
+        .welcome-card {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-top: 20px;
+            color: #000000 !important;
+        }
+
+        .welcome-logos {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            gap: 25px;
             margin-bottom: 15px;
         }
 
-        .logo-img {
-            height: 70px;
-            width: auto;
+        .welcome-logo-img {
+            height: 75px;
             object-fit: contain;
         }
 
-        .welcome-box h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-        }
-
-        .welcome-box p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .alert-info {
-            background-color: #ecfdf5;
-            border: 2px solid #10b981;
-            color: #065f46;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px 14px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: 500;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            background-color: #ffffff;
-            color: var(--dark);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            background-color: #ffffff;
-        }
-
-        .btn-block {
-            width: 100%;
-            padding: 12px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #ffffff;
-            background-color: var(--primary);
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .btn-block:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* QUIZ LAYOUT */
-        .quiz-layout {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 25px;
-            align-items: start;
-        }
-
-        @media (max-width: 992px) {
-            .quiz-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .main-quiz-card {
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            min-height: 380px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .section-badge {
-            display: inline-block;
-            background-color: var(--dark);
-            color: #ffffff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .question-number {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .question-text {
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .options-likert {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        @media (max-width: 576px) {
-            .options-likert {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .opt-btn {
-            background-color: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 14px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
-        .opt-btn:hover {
-            background-color: var(--primary-light);
-        }
-
-        .opt-btn.selected {
-            background-color: var(--primary);
-            color: #ffffff;
-        }
-
-        .nav-actions {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            border-top: 2px solid var(--border-color);
-            padding-top: 20px;
-        }
-
-        .btn-nav {
-            padding: 10px 20px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            background-color: #ffffff;
-            color: var(--dark);
-        }
-
-        .btn-nav:hover {
+        .badge {
             background-color: #f1f5f9;
-        }
-
-        .btn-primary-nav {
-            background-color: var(--secondary);
-            color: #ffffff;
-        }
-
-        .btn-primary-nav:hover {
-            background-color: var(--secondary-hover);
-        }
-
-        /* SIDEBAR GRID */
-        .sidebar-card {
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .sidebar-title {
-            font-size: 0.9rem;
+            color: var(--purple-bright);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 0.85rem;
             font-weight: 800;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
         }
 
-        .number-grid {
+        .school-title { 
+            font-size: 1.7rem; 
+            font-weight: 800; 
+            color: #000000; 
+            margin: 0; 
+            letter-spacing: -0.01em; 
+        }
+        
+        .app-title { 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            color: #000000; 
+            margin: 10px 0 15px 0; 
+        }
+
+        .welcome-instruction {
+            color: #000000 !important; 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            line-height: 1.6; 
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .form-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+            margin-top: 30px;
         }
 
+        @media (max-width: 768px) {
+            .form-grid, .info-box-grid { grid-template-columns: 1fr; }
+            body { padding: 10px; }
+            .container { padding: 20px; border-radius: 16px; }
+        }
+
+        .form-group { margin-bottom: 5px; }
+        label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.95rem; color: #000000; }
+        
+        input[type="text"], select {
+            width: 100%; padding: 14px 16px; border: 2px solid #000000; border-radius: 12px; font-size: 0.95rem; font-weight: 600; background-color: #f8fafc; color: #000000;
+        }
+        input[type="text"]:focus, select:focus { outline: none; border-color: var(--primary); background-color: white; box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
+
+        .timer-banner {
+            background: #fef2f2; border: 1px solid #fee2e2; color: #ef4444;
+            padding: 12px; border-radius: 12px; text-align: center; font-weight: 700; font-size: 1.2rem; margin-bottom: 25px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+
+        .quiz-layout { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 20px; }
+        @media(min-width: 768px) { .quiz-layout { grid-template-columns: 2.3fr 1.7fr; } }
+
+        .question-box { border: 1px solid #cbd5e1; padding: 30px; border-radius: 16px; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; }
+        .question-text { font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; color: #000000; line-height: 1.6; }
+        
+        .options-likert, .options-binary { display: flex; flex-direction: column; gap: 12px; }
+        
+        button.opt-btn {
+            padding: 14px 18px; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 0.95rem; font-weight: 600; background: white; text-align: left; color: #000000;
+        }
+        button.opt-btn.selected { background-color: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+        button.opt-btn:hover { border-color: var(--primary); background-color: #fafafa; }
+
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; gap: 12px; }
+        
+        .grid-box { border: 1px solid #cbd5e1; padding: 25px; border-radius: 16px; background-color: #f8fafc; }
+        .grid-title { font-weight: 700; margin-bottom: 20px; font-size: 0.95rem; text-align: center; color: #000000; }
+        .number-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-height: 320px; overflow-y: auto; padding-right: 5px; }
+        
         .num-item {
-            aspect-ratio: 1;
-            border: 2px solid var(--border-color);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background-color: #ffffff;
+            aspect-ratio: 1; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
         }
+        .num-answered { background-color: var(--status-answered); }
+        .num-unanswered { background-color: var(--status-unanswered); color: white; }
+        .num-current { background-color: var(--status-current); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4); }
 
-        .num-unanswered {
-            background-color: #fffbeb;
-            border-color: var(--status-unanswered);
-            color: #b45309;
-        }
+        .legend { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; margin-top: 20px; border-top: 1px solid #cbd5e1; padding-top: 15px; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-color { width: 14px; height: 14px; border-radius: 4px; }
 
-        .num-answered {
-            background-color: #f0fdf4;
-            border-color: var(--status-answered);
-            color: #15803d;
-        }
+        .btn-nav { background: var(--primary); color: white; font-weight: 700; border: none; padding: 14px 28px; border-radius: 12px; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2); }
+        .btn-nav:hover { background: var(--primary-hover); transform: translateY(-1px); }
+        .btn-secondary { background: #64748b; color: white; font-weight: 700; border: none; padding: 14px 28px; border-radius: 12px; cursor: pointer; font-size: 0.95rem; }
+        .btn-secondary:hover { background: #475569; }
+        .btn-finish { background: var(--secondary); color: white; font-weight: 700; border: none; padding: 14px 28px; border-radius: 12px; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2); }
+        .btn-finish:hover { background: var(--secondary-hover); }
 
-        .num-current {
-            background-color: #eff6ff;
-            border-color: var(--status-current);
-            color: #1d4ed8;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-        }
-
-        /* RESULT PAGE (PRINT FORMAT) */
-        .result-container {
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .kop-surat {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 4px double #000000;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .kop-logo {
-            height: 80px;
-            width: auto;
-        }
-
-        .kop-teks {
-            text-align: center;
-            flex-grow: 1;
-            padding: 0 20px;
-        }
-
-        .kop-teks h2 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
-        .kop-teks h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 1.3;
-            margin: 2px 0;
-        }
-
-        .kop-teks p {
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-top: 4px;
-        }
-
-        .document-title {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .document-title h4 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: underline;
-        }
-
-        .document-title p {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 2px;
+        .result-content-wrapper {
+            position: relative;
+            width: 100%;
         }
 
         .table-biodata {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
             margin-bottom: 25px;
-            background-color: var(--box-riasec);
-            border: 1px solid #000000;
+            font-size: 0.95rem;
         }
-
         .table-biodata td {
-            padding: 8px 12px;
-            font-size: 0.9rem;
-            border: 1px solid #000000;
+            border: 2px solid #000000 !important;
+            padding: 14px;
+            vertical-align: middle;
+            color: #000000;
+            background-color: var(--pdf-orange-light) !important;
         }
 
-        .table-biodata td.label {
-            font-weight: 700;
-            width: 180px;
-            text-transform: uppercase;
+        .result-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+            margin-bottom: 25px; 
+            font-size: 0.95rem; 
         }
-
-        .table-biodata td.value {
-            font-weight: 500;
-        }
-
-        .table-report {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        .table-report th, .table-report td {
-            border: 1px solid #000000;
-            padding: 10px 12px;
+        .result-table th { 
+            border: 2px solid #000000 !important;
+            padding: 14px;
+            background-color: #f1f5f9; 
+            font-weight: 800; 
+            color: #000000; 
             text-align: left;
-            font-size: 0.88rem;
         }
-
-        .table-report th {
-            background-color: #f1f5f9;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-align: center;
+        .result-table td { 
+            border: 2px solid #000000 !important;
+            padding: 14px; 
+            vertical-align: top; 
+            color: #000000 !important;
+            font-weight: 700 !important;
+            background-color: var(--pdf-purple-light) !important;
         }
 
         .signature-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            text-align: center;
+            margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; font-size: 0.95rem; position: relative; z-index: 1; color: #000000;
+        }
+        .sig-space { height: 75px; }
+
+        .action-dock {
+            display: flex; justify-content: center; gap: 15px; margin-top: 40px;
         }
 
-        .sig-box {
+        .app-copyright {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #000000;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border-top: 2px solid #000000;
+            padding-top: 15px;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 130px;
-        }
-
-        .sig-name {
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
-        .action-bar-result {
-            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 5px;
         }
 
-        /* PRINT CONFIG */
         @media print {
-            body {
-                background: white;
-                color: black;
-                padding: 0;
+            body { background: white; padding: 0; margin: 0; color: black; min-height: auto; display: block; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; border-radius: 0; }
+            .container::before, .timer-banner, .btn-nav, .btn-finish, .btn-secondary, .action-dock, .welcome-logos, .badge, .info-box-grid, .welcome-motivation-card, .app-copyright { display: none !important; }
+            .table-biodata td { background-color: var(--pdf-orange-light) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .result-table th { background-color: #f1f5f9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .result-table td { background-color: var(--pdf-purple-light) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .table-biodata td, .result-table th, .result-table td { border: 2px solid #000000 !important; }
+            .pdf-header-container { display: flex !important; flex-direction: row !important; border-bottom: 4px double #000000 !important; }
+            
+            .header-container h1, .header-container h2, .header-container h3,
+            .kop-surat h1, .kop-surat h2, .kop-surat h3,
+            h1, h2, h3 {
+                font-size: 26pt !important; 
+                font-weight: 900 !important; 
+                color: #000000 !important;
+                line-height: 1.3 !important;
+                margin: 0 0 5px 0 !important;
             }
-            .no-print {
-                display: none !important;
+
+            h3, .judul-laporan {
+                font-size: 20pt !important;
+                margin-top: 15px !important;
+                margin-bottom: 25px !important;
             }
-            .result-container {
-                border: none;
-                padding: 0;
-                max-width: 100%;
+
+            body, p, span, th, td, div {
+                font-size: 16pt !important; 
+                color: #000000 !important;
+                line-height: 1.5 !important;
             }
-            .table-biodata {
-                background-color: transparent !important;
+
+            table, .result-table, .table-biodata {
+                width: 100% !important;
+                margin-bottom: 25px !important; 
             }
-            .kop-teks h2 { font-size: 16pt !important; }
-            .kop-teks h3 { font-size: 20pt !important; }
-            .kop-teks p { font-size: 10pt !important; }
+
+            .table-biodata td, table:not(.result-table) td {
+                text-align: left !important;
+                font-size: 16pt !important;
+                padding: 6px !important;
+            }
+
+            .deskripsi, .rekomendasi, .isi-deskripsi, td[class*="deskripsi"], .result-table td {
+                font-size: 16pt !important;
+                text-align: justify !important;
+            }
+
+            .signature-section-table, [class*="signature"], [id*="signature"] {
+                margin-top: 25px !important; 
+            }
+
+            .signature-section-table td, [class*="signature"] td {
+                font-size: 16pt !important; 
+                text-align: center !important; 
+                padding-top: 45px !important; 
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="no-print">
-        <div class="container header-content">
-            <div class="brand">
-                <h1 id="header-title">Aplikasi Asesmen Kenali Potensi Murid</h1>
-                <p id="header-subtitle">Layanan Bimbingan dan Konseling</p>
+<div class="container">
+    <div id="start-page">
+        <div class="welcome-card">
+            <div class="welcome-logos">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI2DcjYLPh_VSiwh_xgvGxXe1BYK8nAgnNuQ&s" class="welcome-logo-img" alt="Logo Sekolah">
+                <img src="https://konselingindonesia.com/images/logo%20konseling.jpg" class="welcome-logo-img" alt="Logo Konselor">
             </div>
-            <div class="timer-box" id="quiz-timer-wrapper" style="display: none;">
-                <span>SISA WAKTU:</span>
-                <span id="timer-display">60:00</span>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        
-        <div class="card no-print" id="start-page">
-            <div class="welcome-box">
-                <div class="logo-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" alt="Logo Konselor" class="logo-img">
+            <span class="badge">Aplikasi Resmi BK</span>
+            <div class="school-title">SMKN 1 PANGKAJENE DAN KEPULAUAN</div>
+            <div class="app-title">Sistem Asesmen Psikologis & Penyelarasan Minat Bakat Siswa</div>
+            
+            <div class="welcome-motivation-card">
+                <h2 class="motivation-title">KENALI POTENSIMU</h2>
+                <p class="motivation-subtitle">Halo, Masa Depan Hebat! ✨</p>
+                <div class="motivation-body">
+                    <p>Setiap dari kita terlahir dengan bakat, keunikan, dan kekuatan yang luar biasa. Tes ini bukanlah ujian yang menentukan benar atau salah, melainkan sebuah <strong>kunci pintu gerbang untuk mengenal dirimu lebih dalam.</strong></p>
+                    <div class="motivation-quote">
+                        "Masa depanmu ditentukan oleh apa yang kamu mulai hari ini."
+                    </div>
+                    <p>Jangan ragu dan tidak perlu cemas. Jawablah dengan jujur sesuai dengan apa yang benar-benar kamu rasakan. Pilihanmu hari ini akan membantu Bapak/Ibu Guru BK untuk membimbingmu meraih impian dan cita-cita terbaikmu.</p>
                 </div>
-                <h2>Mulai Asesmen Diri</h2>
-                <p>Silakan lengkapi identitas Anda di bawah ini secara mandiri</p>
+                <p class="motivation-footer">Mari mulai dengan senyuman dan rasa percaya diri. Selamat mengisi! 💪🚀</p>
             </div>
 
-            <div class="alert-info">
-                Instrumen ini memetakan tipe kepribadian kerja, minat ekstra, dan metode belajar efektif Anda.
-            </div>
+            <p class="welcome-instruction">
+                Sesi instrumen ini dirancang untuk mendeteksi profil potensi Anda dengan batasan waktu **60 Menit**. Silakan pelajari 3 pilar aspek evaluasi di bawah ini sebelum memulai ujian:
+            </p>
 
+            <div class="info-box-grid">
+                <div class="info-card card-riasec">
+                    <div class="icon">💼</div>
+                    <h4>TES RIASEC</h4>
+                    <p>Mendeteksi kecenderungan minat karir masa depan yang paling akurat sesuai kepribadian kerja Anda.</p>
+                </div>
+                <div class="info-card card-gardner">
+                    <div class="icon">🧠</div>
+                    <h4>MIS GARDNER</h4>
+                    <p>Mengukur potensi kecerdasan majemuk untuk rekomendasi kegiatan ekstrakurikuler yang optimal.</p>
+                </div>
+                <div class="info-card card-vak">
+                    <div class="icon">📚</div>
+                    <h4>GAYA BELAJAR</h4>
+                    <p>Menemukan model pembelajaran (Visual, Auditori, Kinestetik) yang paling efektif bagi otak Anda.</p>
+                </div>
+            </div>
+            
             <form id="biodata-form" onsubmit="event.preventDefault(); validateForm();">
-                <div class="form-group">
-                    <label>Nama Lengkap</label>
-                    <input type="text" id="input-nama" class="form-control" placeholder="Ketik nama lengkap Anda" required autocomplete="off">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nama Lengkap Siswa</label>
+                        <input type="text" id="input-nama" required placeholder="Contoh: Andi Muhammad">
+                    </div>
+                    <div class="form-group">
+                        <label>NISN (Nomor Induk Siswa Nasional)</label>
+                        <input type="text" id="input-nisn" required placeholder="Contoh: 0072348590">
+                    </div>
+                    <div class="form-group">
+                        <label>Kompetensi Keahlian / Jurusan</label>
+                        <select id="input-keahlian" required>
+                            <option value="" disabled selected>-- Pilih Kompetensi Keahlian --</option>
+                            <option value="Pemasaran">Pemasaran</option>
+                            <option value="AKL">AKL</option>
+                            <option value="MPLB">MPLB</option>
+                            <option value="TJKT">TJKT</option>
+                            <option value="DKV">DKV</option>
+                            <option value="APHP">APHP</option>
+                            <option value="PPLG">PPLG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Asal Sekolah</label>
+                        <input type="text" id="input-asal" required placeholder="Contoh: UPT SMKN 1 Pangkep">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>NISN (Nomor Induk Siswa Nasional)</label>
-                    <input type="text" id="input-nisn" class="form-control" placeholder="10 Digit nomor NISN" required autocomplete="off" pattern="[0-9]{10}">
+                <div style="margin-top: 35px;">
+                    <button type="submit" class="btn-nav" style="padding: 16px 45px; font-size: 1.05rem; background-color: var(--primary);">Mulai Ujian Asesmen</button>
                 </div>
-                <div class="form-group">
-                    <label>Kelas</label>
-                    <input type="text" id="input-kelas" class="form-control" placeholder="Contoh: XI MIPA 1 atau XII TKJ 2" required autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label>Kompetensi Keahlian (Jurusan)</label>
-                    <input type="text" id="input-keahlian" class="form-control" placeholder="Ketik jurusan Anda sendiri" required autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label>Asal Sekolah</label>
-                    <input type="text" id="input-asal" class="form-control" placeholder="Ketik nama sekolah Anda saat ini" required autocomplete="off">
-                </div>
-                <button type="submit" class="btn-block">Buka Lembar Soal & Mulai</button>
             </form>
+
+            <div class="app-copyright">
+                <span>©</span> <span id="copyright-year">2026</span> <strong>Bimbingan & Konseling SMKN 1 Pangkajene dan Kepulauan</strong>. All Rights Reserved.
+            </div>
         </div>
+    </div>
 
-        <div class="quiz-layout no-print" id="quiz-page" style="display: none;">
-            <div class="main-quiz-card">
-                <div>
-                    <span class="section-badge" id="current-section-lbl">Sesi 1: RIASEC</span>
-                    <div class="question-number" id="question-number-title">Soal Nomor 1</div>
-                    <div class="question-text" id="question-text-content">Memuat teks pernyataan instrumen...</div>
-                </div>
-
-                <div>
-                    <div class="options-likert" id="options-container">
-                        </div>
-
-                    <div class="nav-actions">
-                        <button type="button" class="btn-nav" id="btn-prev" onclick="navigate(-1)">Sebelumnya</button>
-                        <button type="button" class="btn-nav" id="btn-next" onclick="navigate(1)">Selanjutnya</button>
-                        <button type="button" class="btn-nav btn-primary-nav" id="btn-submit-test" style="display: none;" onclick="finishQuiz()">Kirim & Lihat Hasil</button>
+    <div id="quiz-page" style="display: none;">
+        <div class="timer-banner">
+            ⏱️ <span>Sisa Waktu Pengerjaan:</span> <span id="timer-display">60:00</span>
+        </div>
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px;" id="current-section-lbl">Sesi instrumen</div>
+        
+        <div class="quiz-layout">
+            <div>
+                <div class="question-box">
+                    <div>
+                        <div style="font-size: 0.9rem; color: #000000; font-weight: 700; margin-bottom: 8px;" id="question-number-title">Soal Nomor 1</div>
+                        <div class="question-text" id="question-text-content">Memuat lembar daftar pernyataan...</div>
+                        <div id="options-container"></div>
+                    </div>
+                    
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" id="btn-prev" onclick="navigate(-1)">Sebelumnya</button>
+                        <button class="btn-nav" id="btn-next" onclick="navigate(1)">Selanjutnya</button>
+                        <button class="btn-finish" id="btn-submit-test" style="display:none;" onclick="finishQuiz()">Selesai & Kirim Hasil</button>
                     </div>
                 </div>
             </div>
 
-            <div class="sidebar-card">
-                <div class="sidebar-title">Peta Lembar Jawaban</div>
-                <div class="number-grid" id="number-grid-elements">
-                    </div>
+            <div class="grid-box">
+                <div class="grid-title">Peta Lembar Jawaban Digital</div>
+                <div class="number-grid" id="number-grid-elements"></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-color" style="background:var(--status-current)"></div> Dibuka</div>
+                    <div class="legend-item"><div class="legend-color" style="background:var(--status-answered)"></div> Diisi</div>
+                    <div class="legend-item"><div class="legend-color" style="background:var(--status-unanswered)"></div> Belum</div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="result-container" id="result-page" style="display: none;">
-            <div class="kop-surat">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" alt="Logo Kiri" class="kop-logo">
-                <div class="kop-teks">
-                    <h2>Pemerintah Provinsi Sulawesi Selatan</h2>
-                    <h2>Dinas Pendidikan</h2>
-                    <h3 id="res-asal">NAMA SEKOLAH ASAL</h3>
-                    <p>Alamat: Jalan Poros Makassar-Pangkep KM. 45, Pangkajene, Kepulauan</p>
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Tut_Wuri_Handayani.png" alt="Logo Kanan" class="kop-logo">
+    <div id="result-page" style="display: none;">
+        <div class="pdf-header-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI2DcjYLPh_VSiwh_xgvGxXe1BYK8nAgnNuQ&s" class="header-logo" alt="Logo Sekolah">
+            
+            <div class="header-text">
+                <div style="font-size: 1.1rem; font-weight: 800; color: #000000; line-height: 1.2;">SMKN 1 PANGKAJENE DAN KEPULAUAN</div>
+                <div style="font-size: 0.8rem; font-weight: 700; color: #000000; margin-top: 2px;"> BIMBINGAN DAN KONSELING (BK)</div>
+                <div style="font-size: 0.95rem; font-weight: 800; color: #000000; margin-top: 6px; line-height: 1.2;">LAPORAN HASIL ANALISIS RESMI ASESMEN KENALI POTENSI SISWA</div>
             </div>
 
-            <div class="document-title">
-                <h4>Hasil Laporan Asesmen Mandiri Siswa</h4>
-                <p id="document-serial-num">Nomor Dokumen: BK-KPM/2026/IX</p>
-            </div>
-
+            <img src="https://konselingindonesia.com/images/logo%20konseling.jpg" class="header-logo" alt="Logo Konselor">
+        </div>
+        
+        <div class="result-content-wrapper">
             <table class="table-biodata">
                 <tr>
-                    <td class="label">Nama Lengkap</td>
-                    <td style="width: 10px; text-align: center;">:</td>
-                    <td class="value" id="res-nama" style="text-transform: uppercase; font-weight: 700;">-</td>
+                    <td style="width: 20%;"><strong>Nama Siswa</strong></td>
+                    <td id="res-nama" style="width: 30%; font-weight: 800;"></td>
+                    <td style="width: 20%;"><strong>Kompetensi Keahlian</strong></td>
+                    <td id="res-keahlian" style="width: 30%; font-weight: 800;"></td>
                 </tr>
                 <tr>
-                    <td class="label">NISN</td>
-                    <td>:</td>
-                    <td class="value" id="res-nisn">-</td>
-                </tr>
-                <tr>
-                    <td class="label">Kelas</td>
-                    <td>:</td>
-                    <td class="value" id="res-kelas" style="text-transform: uppercase;">-</td>
-                </tr>
-                <tr>
-                    <td class="label">Kompetensi Keahlian</td>
-                    <td>:</td>
-                    <td class="value" id="res-keahlian" style="text-transform: uppercase;">-</td>
+                    <td><strong>NISN</strong></td>
+                    <td id="res-nisn" style="font-weight: 800;"></td>
+                    <td><strong>Asal Sekolah</strong></td>
+                    <td id="res-asal" style="font-weight: 800;"></td>
                 </tr>
             </table>
 
-            <table class="table-report">
+            <table class="result-table">
                 <thead>
                     <tr>
-                        <th style="width: 250px;">Aspek Pengembangan</th>
-                        <th style="width: 220px;">Hasil Rekomendasi Dominan</th>
-                        <th>Deskripsi Eksplorasi Potensi Siswa</th>
+                        <th style="width: 25%;">Aspek Profiling</th>
+                        <th style="width: 25%;">Kategori Skor Teratas (Persentase)</th>
+                        <th style="width: 50%;">Deskripsi Komprehensif & Pilihan Rekomendasi</th>
                     </tr>
                 </thead>
                 <tbody id="dynamic-table-rows">
-                    </tbody>
+                </tbody>
             </table>
 
             <div class="signature-section">
-                <div class="sig-box">
-                    <p>Mengetahui,</p>
-                    <p>Wali Kelas</p>
-                    <p class="sig-name">...........................................</p>
-                    <p style="font-size: 0.8rem; margin-top: -10px;">NIP.</p>
+                <div>
+                    <p>Mengetahui,<br><strong>Wali Kelas</strong></p>
+                    <div class="sig-space"></div>
+                    <p>_______________________</p>
+                    <p style="margin-top: 5px; font-size: 0.9rem; font-weight: 600;">NIP. ........................................</p>
                 </div>
-                <div class="sig-box">
-                    <p>&nbsp;</p>
-                    <p>Siswa Bersangkutan</p>
-                    <p class="sig-name" id="sig-student-name" style="text-transform: uppercase;">-</p>
-                    <p id="sig-student-nisn" style="font-size: 0.8rem; margin-top: -10px;">NISN. -</p>
+                <div>
+                    <p>Siswa Bersangkutan,<br><strong>Peserta Asesmen</strong></p>
+                    <div class="sig-space"></div>
+                    <p><strong id="sig-student-name" style="text-decoration: underline;"></strong></p>
+                    <p style="margin-top: 5px; font-size: 0.9rem; font-weight: 600;" id="sig-student-nisn">NISN. </p>
                 </div>
-                <div class="sig-box">
-                    <p id="current-date-lbl">Pangkajene, ....................</p>
-                    <p>Guru Pembimbing / BK</p>
-                    <p class="sig-name">...........................................</p>
-                    <p style="font-size: 0.8rem; margin-top: -10px;">NIP.</p>
+                <div>
+                    <p><span id="current-date-lbl">Pangkajene, </span><br><strong>Guru Bimbingan & Konseling</strong></p>
+                    <div class="sig-space"></div>
+                    <p>_______________________</p>
+                    <p style="margin-top: 5px; font-size: 0.9rem; font-weight: 600;">NIP. ........................................</p>
                 </div>
-            </div>
-
-            <div class="action-bar-result no-print">
-                <button type="button" class="btn-nav" onclick="restartAssessment()">Ulangi Ujian</button>
-                <button type="button" class="btn-nav btn-primary-nav" onclick="handleDownloadPDF()">Cetak / Unduh PDF</button>
             </div>
         </div>
 
-    </main>
+        <div class="action-dock">
+            <button class="btn-finish" style="background-color: #000000;" onclick="handleDownloadPDF()">Unduh / Cetak Laporan PDF</button>
+            <button class="btn-secondary" id="btn-restart-page" style="display: none;" onclick="restartAssessment()">Kembali ke Halaman Awal</button>
+        </div>
+    </div>
+</div>
 
-    <script>
-        const questions = [
-            // SESI 1: RIASEC (48 Pernyataan)
-            { id: "q1", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya suka memperbaiki peralatan mekanik atau instalasi listrik di rumah." },
-            { id: "q2", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya senang memecahkan teka-teki logika atau masalah matematika yang rumit." },
-            { id: "q3", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya menikmati membuat sketsa gambar, mendesain grafis, atau menulis karya kreatif." },
-            { id: "q4", section: "Sesi 1: RIASEC", category: "Social", text: "Saya merasa puas ketika bisa membantu mengajari teman yang kesulitan belajar." },
-            { id: "q5", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya suka memimpin diskusi kelompok atau mengorganisasi sebuah kegiatan." },
-            { id: "q6", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya lebih suka bekerja dengan data, tabel, atau menyusun berkas secara teratur." },
-            { id: "q7", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya tertarik mempelajari cara kerja mesin, merakit PC, atau instalasi jaringan." },
-            { id: "q8", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya suka menganalisis alasan di balik suatu peristiwa ilmiah atau fenomena alam." },
-            { id: "q9", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya suka mengekspresikan diri melalui musik, seni tari, atau bermain peran." },
-            { id: "q10", section: "Sesi 1: RIASEC", category: "Social", text: "Saya senang terlibat dalam aktivitas sosial, relawan, atau komunitas kemanusiaan." },
-            { id: "q11", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya tertarik untuk mencoba berwirausaha atau menjual suatu produk kreatif." },
-            { id: "q12", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya merasa nyaman melakukan tugas rutin yang memiliki panduan langkah kerja jelas." },
-            { id: "q13", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya lebih suka membuat produk fisik/kriya nyata daripada sekadar teori di atas kertas." },
-            { id: "q14", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya senang membaca artikel teknologi informasi, sains, atau hasil riset terbaru." },
-            { id: "q15", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya tertarik mengoleksi atau mengagumi estetika dari benda seni unik." },
-            { id: "q16", section: "Sesi 1: RIASEC", category: "Social", text: "Saya mudah berempati dan menjadi pendengar yang baik bagi curahan hati teman." },
-            { id: "q17", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya percaya diri bernegosiasi dan meyakinkan orang lain terhadap ide saya." },
-            { id: "q18", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya suka memeriksa kembali pekerjaan untuk memastikan tidak ada rincian yang salah." },
-            { id: "q19", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya menikmati kegiatan di luar ruangan seperti mengoperasikan perkakas atau berkebun." },
-            { id: "q20", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya suka meneliti baris kode pemrograman untuk mencari letak kesalahan sistem." },
-            { id: "q21", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya suka mencoba dekorasi ruang baru atau memadupadankan gaya pakaian inovatif." },
-            { id: "q22", section: "Sesi 1: RIASEC", category: "Social", text: "Saya tertarik pada profesi layanan pengasuhan, konseling, atau mediasi konflik kelompok." },
-            { id: "q23", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya suka mengambil risiko terukur demi mencapai target keuntungan bersama." },
-            { id: "q24", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya gemar menyusun pembukuan saku pengeluaran uang mingguan secara detail." },
-            { id: "q25", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya suka menguji kekuatan material fisik atau melakukan eksperimen teknik mekanikal." },
-            { id: "q26", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya betah berlama-lama mencari data referensi ilmiah di perpustakaan atau internet." },
-            { id: "q27", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya sering memikirkan ide-ide out-of-the-box yang tidak terpikirkan orang kebanyakan." },
-            { id: "q28", section: "Sesi 1: RIASEC", category: "Social", text: "Saya suka berkolaborasi kelompok untuk memikirkan program kesejahteraan warga." },
-            { id: "q29", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya senang mempromosikan acara sekolah agar dihadiri banyak pengunjung umum." },
-            { id: "q30", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya menyukai aturan penataan arsip digital folder komputer yang rapi berurutan." },
-            { id: "q31", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya tertarik dengan cara kerja permesinan pabrik, alat berat, atau robotika." },
-            { id: "q32", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya suka mendiagnosis kerusakan sistem hardware komputer berdasarkan gejala error." },
-            { id: "q33", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya menikmati kegiatan menulis puisi, cerpen, atau mengisi konten blog pribadi." },
-            { id: "q34", section: "Sesi 1: RIASEC", category: "Social", text: "Saya senang menyambut orang baru dan membuat mereka merasa nyaman di kelompok." },
-            { id: "q35", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya berambisi untuk mengelola proyek besar atau menduduki posisi manajerial." },
-            { id: "q36", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya lebih memilih pekerjaan kantoran statis dengan alur birokrasi baku." },
-            { id: "q37", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya merasa tertantang membongkar pasang komponen elektronik yang rusak." },
-            { id: "q38", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya suka menganalisis statistik grafik data untuk memprediksi tren masa depan." },
-            { id: "q39", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya senang mengedit video dengan transisi sinematik dan efek audio kreatif." },
-            { id: "q40", section: "Sesi 1: RIASEC", category: "Social", text: "Saya suka mengadakan pelatihan atau sosialisasi pencegahan perundungan remaja." },
-            { id: "q41", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya pandai memotivasi anggota tim yang patah semangat agar kembali bekerja." },
-            { id: "q42", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya suka membuat daftar cek (checklist) agenda harian dan mencoret yang sudah selesai." },
-            { id: "q43", section: "Sesi 1: RIASEC", category: "Realistic", text: "Saya bangga jika berhasil membangun atau memodifikasi suatu benda mekanis mandiri." },
-            { id: "q44", section: "Sesi 1: RIASEC", category: "Investigative", text: "Saya senang membandingkan kelebihan antar jurnal riset medis atau teknologi informatika." },
-            { id: "q45", section: "Sesi 1: RIASEC", category: "Artistic", text: "Saya suka mengunjungi museum seni, pameran arsitektur, atau festival budaya." },
-            { id: "q46", section: "Sesi 1: RIASEC", category: "Social", text: "Saya ikhlas meluangkan waktu luang demi mendengarkan curhatan permasalahan psikologis orang lain." },
-            { id: "q47", section: "Sesi 1: RIASEC", category: "Enterprising", text: "Saya senang merancang strategi pemasaran bisnis agar mengalahkan omset kompetitor." },
-            { id: "q48", section: "Sesi 1: RIASEC", category: "Conventional", text: "Saya teliti menginput angka inventaris barang sekolah tanpa ada selisih satu pun." },
+<script>
+    document.getElementById('copyright-year').innerText = new Date().getFullYear();
 
-            // SESI 2: MIS GARDNER
-            { id: "q49", section: "Sesi 2: MIS Gardner", category: "Linguistic", text: "Saya mudah mengingat kutipan kata bijak, istilah asing, atau materi hafalan teks." },
-            { id: "q50", section: "Sesi 2: MIS Gardner", category: "Logical-Mathematical", text: "Saya menikmati pengerjaan hitungan matematika atau memprogram fungsi Excel." },
-            { id: "q51", section: "Sesi 2: MIS Gardner", category: "Spatial-Visual", text: "Saya mudah membaca peta navigasi atau membayangkan bentuk 3 dimensi suatu ruang." },
-            { id: "q52", section: "Sesi 2: MIS Gardner", category: "Bodily-Kinesthetic", text: "Saya unggul dalam aktivitas motorik kasar seperti olahraga, menari, atau kerajinan tangan." },
-            { id: "q53", section: "Sesi 2: MIS Gardner", category: "Musical", text: "Saya peka terhadap ketukan nada sumbang dan mudah menghafal melodi lagu baru." },
-            { id: "q54", section: "Sesi 2: MIS Gardner", category: "Interpersonal", text: "Saya pandai membaca ekspresi wajah, bahasa tubuh, serta intensi tersembunyi orang." },
-            { id: "q55", section: "Sesi 2: MIS Gardner", category: "Intrapersonal", text: "Saya sadar penuh kelemahan diri dan rutin menetapkan refleksi evaluasi target hidup." },
-            { id: "q56", section: "Sesi 2: MIS Gardner", category: "Naturalist", text: "Saya suka memelihara hewan, bercocok tanam, atau peduli isu kelestarian alam." },
-            { id: "q57", section: "Sesi 2: MIS Gardner", category: "Linguistic", text: "Saya percaya diri berpidato atau menulis opini esai yang persuasif." },
-            { id: "q58", section: "Sesi 2: MIS Gardner", category: "Logical-Mathematical", text: "Saya suka menganalisis alur logika silogisme/sebab-akibat dari sebuah argumen." },
-            { id: "q59", section: "Sesi 2: MIS Gardner", category: "Spatial-Visual", text: "Saya lebih mudah menyerap ilmu via bagan infografis daripada lembaran teks naratif." },
-            { id: "q60", section: "Sesi 2: MIS Gardner", category: "Bodily-Kinesthetic", text: "Saya tidak betah duduk diam terlalu lama, lebih suka bergerak mempraktikkan materi." },
-            { id: "q61", section: "Sesi 2: MIS Gardner", category: "Musical", text: "Belajar atau bekerja sambil mendengarkan musik membantu meningkatkan fokus konsentrasi saya." },
-            { id: "q62", section: "Sesi 2: MIS Gardner", category: "Interpersonal", text: "Teman-teman sering menjadikan saya penengah utama saat terjadi kesalahpahaman kelompok." },
-            { id: "q63", section: "Sesi 2: MIS Gardner", category: "Intrapersonal", text: "Saya tidak mudah terpengaruh tren kelompok (peer pressure) karena memegang prinsip sendiri." },
-            { id: "q64", section: "Sesi 2: MIS Gardner", category: "Naturalist", text: "Saya mengenali perbedaan jenis siklus tanaman atau struktur cuaca lingkungan sekitar." },
-            { id: "q65", section: "Sesi 2: MIS Gardner", category: "Linguistic", text: "Saya menyukai permainan teka-teki silang, scrabble, atau menganalisis majas sastra." },
-            { id: "q66", section: "Sesi 2: MIS Gardner", category: "Logical-Mathematical", text: "Saya suka menyusun pola klasifikasi objek berdasarkan kategori logis tertentu." },
-            { id: "q67", section: "Sesi 2: MIS Gardner", category: "Spatial-Visual", text: "Saya mahir membuat kombinasi warna yang kontras namun serasi dalam media visual." },
-            { id: "q68", section: "Sesi 2: MIS Gardner", category: "Bodily-Kinesthetic", text: "Saya memiliki koordinasi keseimbangan refleks tubuh yang baik saat beraktivitas fisik." },
-            { id: "q69", section: "Sesi 2: MIS Gardner", category: "Musical", text: "Saya suka bersenandung membuat ketukan perkusi ketukan irama spontan memakai jari." },
-            { id: "q70", section: "Sesi 2: MIS Gardner", category: "Interpersonal", text: "Saya menikmati kegiatan memimpin jejaring network besar atau kepanitiaan massal." },
-            { id: "q71", section: "Sesi 2: MIS Gardner", category: "Intrapersonal", text: "Saya tahu persis pemicu stres saya dan mampu mengontrol emosi mandiri." },
-            { id: "q72", section: "Sesi 2: MIS Gardner", category: "Naturalist", text: "Berada di alam terbuka (camping, naik gunung) membuat energi mental saya kembali segar." },
-            { id: "q73", section: "Sesi 2: MIS Gardner", category: "Linguistic", text: "Saya pandai merangkai kata kalimat humor, analogi cerdas, atau mendongeng kisah narasi." },
-            { id: "q74", section: "Sesi 2: MIS Gardner", category: "Logical-Mathematical", text: "Saya tertarik pada konsep ilmiah pembuktian rumus matematika abstrak fisika murni." },
-            { id: "q75", section: "Sesi 2: MIS Gardner", category: "Spatial-Visual", text: "Saya peka terhadap tata letak pencahayaan arsitektur estetik interior suatu bangunan." },
-            { id: "q76", section: "Sesi 2: MIS Gardner", category: "Bodily-Kinesthetic", text: "Saya cepat menguasai teknik fisik gerakan baru dalam olahraga atau tarian." },
-            { id: "q77", section: "Sesi 2: MIS Gardner", category: "Musical", text: "Saya tertarik mempelajari teori akor musik, struktur lirik lagu, atau aransemen suara." },
-            { id: "q78", section: "Sesi 2: MIS Gardner", category: "Interpersonal", text: "Saya mudah membaur akrab dengan orang asing dari latar budaya berbeda." },
-            { id: "q79", section: "Sesi 2: MIS Gardner", category: "Intrapersonal", text: "Saya menikmati momen keheningan (solitude) untuk menulis buku harian refleksi batin." },
-            { id: "q80", section: "Sesi 2: MIS Gardner", category: "Naturalist", text: "Saya peka melihat perubahan kondisi kesehatan hewan peliharaan atau tanaman hias." },
-            { id: "q81", section: "Sesi 2: MIS Gardner", category: "Linguistic", text: "Saya cepat menguasai pelafalan kosa kata atau struktur tata bahasa asing baru." },
-            { id: "q82", section: "Sesi 2: MIS Gardner", category: "Logical-Mathematical", text: "Saya suka menguji hipotesis melalui eksperimen terukur untuk mencari konklusi mutlak." },
-            { id: "q83", section: "Sesi 2: MIS Gardner", category: "Spatial-Visual", text: "Saya mahir membuat mind-mapping visual bercabang banyak untuk memetakan ide rumit." },
-            { id: "q84", section: "Sesi 2: MIS Gardner", category: "Bodily-Kinesthetic", text: "Saya menyukai tantangan aktivitas fisik yang memicu adrenalin ketangkasan motorik." },
-            { id: "q85", section: "Sesi 2: MIS Gardner", category: "Musical", text: "Saya mampu membedakan alat musik apa saja yang sedang berbunyi dalam orchestra simfoni." },
-            { id: "q86", section: "Sesi 2: MIS Gardner", category: "Interpersonal", text: "Saya peka terhadap rasa ketidakadilan sosial yang menimpa minoritas di sekeliling." },
-            { id: "q87", section: "Sesi 2: MIS Gardner", category: "Intrapersonal", text: "Saya memiliki kemandirian motivasi tinggi tanpa perlu diawasi ketat atasan." },
-            { id: "q88", section: "Sesi 2: MIS Gardner", category: "Naturalist", text: "Saya tertarik pada ilmu meteorologi geologi arkeologi purbakala evolusi ekosistem biologis." },
-            { id: "q89", section: "Sesi 2: MIS Gardner", category: "Linguistic", text: "Saya menikmati kegiatan debat kusir argumentatif mempertahankan teks landasan hukum teoritis." },
-            { id: "q90", section: "Sesi 2: MIS Gardner", category: "Logical-Mathematical", text: "Saya gemar memecahkan algoritma kode enkripsi sandi rahasia matematika biner." },
-            { id: "q91", section: "Sesi 2: MIS Gardner", category: "Spatial-Visual", text: "Saya hobi melukis membuat komik strip menyunting foto siluet pencahayaan kontras." },
-            { id: "q92", section: "Sesi 2: MIS Gardner", category: "Bodily-Kinesthetic", text: "Saya mahir mengoperasikan jarum rajut ukir kayu perakitan detail mikroskopis komponen mesin." },
-            { id: "q93", section: "Sesi 2: MIS Gardner", category: "Musical", text: "Saya pandai menirukan siulan atau nyanyian penyanyi asli dengan akurasi nada pas." },
-            { id: "q94", section: "Sesi 2: MIS Gardner", category: "Interpersonal", text: "Saya senang menjadi panitia penggalangan dana korban bencana alam atau bakti sosial." },
-            { id: "q95", section: "Sesi 2: MIS Gardner", category: "Intrapersonal", text: "Saya rutin mengevaluasi keselarasan perilaku harian saya dengan standar moral agama." },
-            { id: "q96", section: "Sesi 2: MIS Gardner", category: "Naturalist", text: "Saya senang mengamati gugusan rasi bintang astronomi mikroorganisme air kolam via lensa pembesar." },
+    const questions = [
+        // --- 1. RIASEC (1 - 48) ---
+        { id: 1, section: "Sesi 1: RIASEC (Realistic)", text: "Saya suka merakit komponen komputer atau memperbaiki alat elektronik.", category: "Realistic", type: "likert" },
+        { id: 2, section: "Sesi 1: RIASEC (Realistic)", text: "Saya tertarik pada bidang otomotif, mesin, atau pertukangan kayu.", category: "Realistic", type: "likert" },
+        { id: 3, section: "Sesi 1: RIASEC (Realistic)", text: "Saya lebih suka bekerja menggunakan peralatan atau tangan saya sendiri.", category: "Realistic", type: "likert" },
+        { id: 4, section: "Sesi 1: RIASEC (Realistic)", text: "Saya menikmati kegiatan di luar ruangan seperti berkebun atau bertani.", category: "Realistic", type: "likert" },
+        { id: 5, section: "Sesi 1: RIASEC (Realistic)", text: "Saya suka membaca diagram teknis atau instruksi perakitan barang fisik.", category: "Realistic", type: "likert" },
+        { id: 6, section: "Sesi 1: RIASEC (Realistic)", text: "Saya merasa puas ketika berhasil membuat atau memperbaiki benda nyata.", category: "Realistic", type: "likert" },
+        { id: 7, section: "Sesi 1: RIASEC (Realistic)", text: "Saya suka mengoperasikan mesin besar atau alat-alat berat.", category: "Realistic", type: "likert" },
+        { id: 8, section: "Sesi 1: RIASEC (Realistic)", text: "Saya lebih memilih kegiatan olahraga praktis daripada teori taktik olahraga.", category: "Realistic", type: "likert" },
+        
+        { id: 9, section: "Sesi 1: RIASEC (Investigative)", text: "Saya senang memecahkan teka-teki matematika atau logika yang rumit.", category: "Investigative", type: "likert" },
+        { id: 10, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka membaca jurnal ilmiah atau artikel tentang penemuan baru.", category: "Investigative", type: "likert" },
+        { id: 11, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka menganalisis masalah untuk mencari akar penyebabnya.", category: "Investigative", type: "likert" },
+        { id: 12, section: "Sesi 1: RIASEC (Investigative)", text: "Saya tertarik melakukan eksperimen laboratorium atau penelitian ilmiah.", category: "Investigative", type: "likert" },
+        { id: 13, section: "Sesi 1: RIASEC (Investigative)", text: "Saya senang mempelajari cara kerja alam semesta atau tubuh manusia.", category: "Investigative", type: "likert" },
+        { id: 14, section: "Sesi 1: RIASEC (Investigative)", text: "Saya sering mempertanyakan kebenaran suatu informasi sebelum mempercayainya.", category: "Investigative", type: "likert" },
+        { id: 15, section: "Sesi 1: RIASEC (Investigative)", text: "Saya menikmati mata pelajaran sains, fisika, kimia, atau biologi.", category: "Investigative", type: "likert" },
+        { id: 16, section: "Sesi 1: RIASEC (Investigative)", text: "Saya suka menggunakan komputer untuk memproses dan menganalisis data.", category: "Investigative", type: "likert" },
+        
+        { id: 17, section: "Sesi 1: RIASEC (Artistic)", text: "Saya menikmati kegiatan mendesain poster, mengedit video, atau menggambar.", category: "Artistic", type: "likert" },
+        { id: 18, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka menulis cerita pendek, puisi, atau artikel kreatif.", category: "Artistic", type: "likert" },
+        { id: 19, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang mengekspresikan perasaan lewat bermain musik atau bernyanyi.", category: "Artistic", type: "likert" },
+        { id: 20, section: "Sesi 1: RIASEC (Artistic)", text: "Saya lebih menyukai lingkungan kerja yang fleksibel dan tidak kaku.", category: "Artistic", type: "likert" },
+        { id: 21, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka memikirkan ide-ide baru yang unik dan tidak biasa.", category: "Artistic", type: "likert" },
+        { id: 22, section: "Sesi 1: RIASEC (Artistic)", text: "Saya tertarik menonton pameran seni, pertunjukan teater, atau konser.", category: "Artistic", type: "likert" },
+        { id: 23, section: "Sesi 1: RIASEC (Artistic)", text: "Saya senang mendekorasi ruangan agar terlihat estetik.", category: "Artistic", type: "likert" },
+        { id: 24, section: "Sesi 1: RIASEC (Artistic)", text: "Saya suka berimajinasi dan membuat karya orisinal dari pemikiran sendiri.", category: "Artistic", type: "likert" },
+        
+        { id: 25, section: "Sesi 1: RIASEC (Social)", text: "Saya merasa puas jika bisa membantu orang lain menyelesaikan masalah mereka.", category: "Social", type: "likert" },
+        { id: 26, section: "Sesi 1: RIASEC (Social)", text: "Saya suka mengapar, menjelaskan materi, atau melatih teman di sekolah.", category: "Social", type: "likert" },
+        { id: 27, section: "Sesi 1: RIASEC (Social)", text: "Saya senang terlibat dalam kegiatan sosial atau menjadi relawan.", category: "Social", type: "likert" },
+        { id: 28, section: "Sesi 1: RIASEC (Social)", text: "Orang lain sering datang kepada saya untuk bercerita atau curhat.", category: "Social", type: "likert" },
+        { id: 29, section: "Sesi 1: RIASEC (Social)", text: "Saya menikmati pekerjaan yang mengharuskan saya merawat atau menjaga orang lain.", category: "Social", type: "likert" },
+        { id: 30, section: "Sesi 1: RIASEC (Social)", text: "Saya lebih suka bekerja dalam tim kelompok daripada sendirian.", category: "Social", type: "likert" },
+        { id: 31, section: "Sesi 1: RIASEC (Social)", text: "Saya mudah berempati terhadap kesulitan yang dialami orang di sekitar saya.", category: "Social", type: "likert" },
+        { id: 32, section: "Sesi 1: RIASEC (Social)", text: "Saya menyukai kegiatan diskusi kelompok membahas masalah kemanusiaan.", category: "Social", type: "likert" },
+        
+        { id: 33, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka memimpin suatu kelompok, kepanitiaan, atau organisasi.", category: "Enterprising", type: "likert" },
+        { id: 34, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya tertarik mencoba berjualan atau berbisnis untuk mencari keuntungan.", category: "Enterprising", type: "likert" },
+        { id: 35, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya percaya diri saat harus meyakinkan orang lain agar setuju dengan pendapat saya.", category: "Enterprising", type: "likert" },
+        { id: 36, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka mengambil risiko untuk mencapai kesuksesan yang lebih besar.", category: "Enterprising", type: "likert" },
+        { id: 37, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya senang merencanakan strategi untuk memenangkan suatu kompetisi.", category: "Enterprising", type: "likert" },
+        { id: 38, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya suka berbicara di depan umum untuk memotivasi atau memengaruhi orang.", category: "Enterprising", type: "likert" },
+        { id: 39, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya tertarik mempelajari cara mengelola uang atau menjalankan perusahaan.", category: "Enterprising", type: "likert" },
+        { id: 40, section: "Sesi 1: RIASEC (Enterprising)", text: "Saya senang bersaing dan berkompetisi secara sehat dengan orang lain.", category: "Enterprising", type: "likert" },
+        
+        { id: 41, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka menyusun file, data, atau dokumen secara teratur dan rapi.", category: "Conventional", type: "likert" },
+        { id: 42, section: "Sesi 1: RIASEC (Conventional)", text: "Saya lebih menyukai instruksi kerja yang jelas, detail, dan tertulis baku.", category: "Conventional", type: "likert" },
+        { id: 43, section: "Sesi 1: RIASEC (Conventional)", text: "Saya senang mengelola pembukuan keuangan atau mencatat anggaran.", category: "Conventional", type: "likert" },
+        { id: 44, section: "Sesi 1: RIASEC (Conventional)", text: "Saya sangat memperhatikan detail kecil agar tidak terjadi kesalahan ketik/hitung.", category: "Conventional", type: "likert" },
+        { id: 45, section: "Sesi 1: RIASEC (Conventional)", text: "Saya merasa nyaman bekerja dalam rutinitas kerja yang teratur dan konsisten.", category: "Conventional", type: "likert" },
+        { id: 46, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka menyusun jadwal kegiatan harian secara terencana dan terjadwal.", category: "Conventional", type: "likert" },
+        { id: 47, section: "Sesi 1: RIASEC (Conventional)", text: "Saya lebih menyukai tugas memeriksa ulang keakuratan data angka.", category: "Conventional", type: "likert" },
+        { id: 48, section: "Sesi 1: RIASEC (Conventional)", text: "Saya suka menggunakan perangkat lunak spreadsheet (seperti Excel) untuk merapikan informasi.", category: "Conventional", type: "likert" },
 
-            // SESI 3: VAK GAYA BELAJAR
-            { id: "q97", section: "Sesi 3: VAK Gaya Belajar", category: "Visual", text: "Saya lebih mudah paham jika guru menerangkan materi memakai slide proyektor berwarna daripada ceramah lisan." },
-            { id: "q98", section: "Sesi 3: VAK Gaya Belajar", category: "Auditori", text: "Saya lebih cepat menangkap materi dengan mendengarkan penjelasan lisan atau diskusi interaktif kelompok." },
-            { id: "q99", section: "Sesi 3: VAK Gaya Belajar", category: "Kinestetik", text: "Saya lambat memahami instruksi manual sebelum mempraktikkan langsung memegang alat ujinya." },
-            { id: "q100", section: "Sesi 3: VAK Gaya Belajar", category: "Visual", text: "Saya terbiasa mencatat rangkuman rapi di buku memakai aneka warna tinta pulpen atau stabilo." },
-            { id: "q101", section: "Sesi 3: VAK Gaya Belajar", category: "Auditori", text: "Saya suka membaca nyaring atau menggerakkan bibir mengeja kata saat menghafal materi buku." },
-            { id: "q102", section: "Sesi 3: VAK Gaya Belajar", category: "Kinestetik", text: "Saya sering menggerak-gerakkan kaki memutar pulpen atau berjalan keliling ruangan saat berpikir." },
-            { id: "q103", section: "Sesi 3: VAK Gaya Belajar", category: "Visual", text: "Saya peka melihat kesalahan ketik (typo) atau gambar ilustrasi miring pada suatu halaman cetak." },
-            { id: "q104", section: "Sesi 3: VAK Gaya Belajar", category: "Auditori", text: "Saya mudah terganggu pecah konsentrasi jika ada suara bising obrolan sayup di sekitar saya belajar." },
-            { id: "q105", section: "Sesi 3: VAK Gaya Belajar", category: "Kinestetik", text: "Saya menyukai metode studi lapangan (field trip) mengunjungi objek nyata daripada duduk statis di kelas." },
-            { id: "q106", section: "Sesi 3: VAK Gaya Belajar", category: "Visual", text: "Saya cenderung mengingat wajah seseorang daripada mengingat detail nama panggilan mereka." },
-            { id: "q107", section: "Sesi 3: VAK Gaya Belajar", category: "Auditori", text: "Saya lebih suka mendengarkan buku audio (audiobook/podcast) daripada membaca lembaran novel fisik tebal." },
-            { id: "q108", section: "Sesi 3: VAK Gaya Belajar", category: "Kinestetik", text: "Saya refleks memakai bahasa tubuh atau gerakan tangan saat menjelaskan sesuatu ke teman." }
-        ];
+        // --- 2. GARDNER (49 - 112) ---
+        { id: 49, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya suka menulis jurnal, artikel, atau cerita pendek.", category: "Linguistic", type: "binary" },
+        { id: 50, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya mudah mengingat kata-kata baru, kutipan, atau permainan kata.", category: "Linguistic", type: "binary" },
+        { id: 51, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya senang membaca buku, majalah, atau artikel berita digital.", category: "Linguistic", type: "binary" },
+        { id: 52, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya pandai berargumen atau meyakinkan orang lain lewat ucapan.", category: "Linguistic", type: "binary" },
+        { id: 53, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya menikmati pelajaran bahasa, sastra, atau kompetisi debat.", category: "Linguistic", type: "binary" },
+        { id: 54, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya senang menjelaskan arti dari sebuah tulisan atau konsep kata.", category: "Linguistic", type: "binary" },
+        { id: 55, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya sering memperhatikan tata bahasa atau ejaan yang salah.", category: "Linguistic", type: "binary" },
+        { id: 56, section: "Sesi 2: MIS Gardner (Linguistic)", text: "Saya menikmati teka-teki silang atau permainan menyusun kata.", category: "Linguistic", type: "binary" },
 
-        let currentIndex = 0;
-        let answers = {};
-        let studentData = {};
-        let timerInterval = null;
-        let timeRemaining = 60 * 60; // 60 menit
+        { id: 57, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya menyukai tantangan menghitung angka tanpa alat bantu kalkulator.", category: "Logical-Mathematical", type: "binary" },
+        { id: 58, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya suka mengelompokkan data berdasarkan kategori atau pola tertentu.", category: "Logical-Mathematical", type: "binary" },
+        { id: 59, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya tertarik pada eksperimen sains dan pembuktian rumus ilmiah.", category: "Logical-Mathematical", type: "binary" },
+        { id: 60, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya berpikir secara runtut, logis, dan sistematis dalam mengurai masalah.", category: "Logical-Mathematical", type: "binary" },
+        { id: 61, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya senang bermain catur, sudoku, atau game strategi logika.", category: "Logical-Mathematical", type: "binary" },
+        { id: 62, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya selalu mencari alasan rasional di balik terjadinya suatu peristiwa.", category: "Logical-Mathematical", type: "binary" },
+        { id: 63, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya menyukai grafik, diagram, atau statistik data numerik.", category: "Logical-Mathematical", type: "binary" },
+        { id: 64, section: "Sesi 2: MIS Gardner (Logical-Mathematical)", text: "Saya cepat menangkap hubungan sebab-akibat dari suatu fenomena.", category: "Logical-Mathematical", type: "binary" },
 
-        const likertOptions = [
-            { label: "Sangat Setuju (SS)", score: 4 },
-            { label: "Setuju (S)", score: 3 },
-            { label: "Kurang Setuju (KS)", score: 2 },
-            { label: "Tidak Setuju (TS)", score: 1 }
-        ];
+        { id: 65, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya mudah membayangkan visualisasi objek 3 dimensi dalam pikiran saya.", category: "Visual-Spatial", type: "binary" },
+        { id: 66, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya memiliki kepekaan tinggi terhadap kombinasi warna dan estetika.", category: "Visual-Spatial", type: "binary" },
+        { id: 67, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya mahir membaca peta, navigasi arah, atau blueprint sketsa.", category: "Visual-Spatial", type: "binary" },
+        { id: 68, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya lebih mudah belajar menggunakan diagram/infografis daripada teks teks panjang.", category: "Visual-Spatial", type: "binary" },
+        { id: 69, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya senang mencorat-coret sketsa, menggambar, atau membuat desain.", category: "Visual-Spatial", type: "binary" },
+        { id: 70, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya menyukai aktivitas fotografi, videografi, atau seni rupa rupa.", category: "Visual-Spatial", type: "binary" },
+        { id: 71, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya menikmati permainan menyusun lego, puzzle gambar, atau rubik.", category: "Visual-Spatial", type: "binary" },
+        { id: 72, section: "Sesi 2: MIS Gardner (Visual-Spatial)", text: "Saya sering mengenali detail arsitektur ruangan atau bentuk geometri bangunan.", category: "Visual-Spatial", type: "binary" },
 
-        function validateForm() {
-            studentData = {
-                nama: document.getElementById('input-nama').value.trim(),
-                nisn: document.getElementById('input-nisn').value.trim(),
-                kelas: document.getElementById('input-kelas').value.trim(),
-                keahlian: document.getElementById('input-keahlian').value.trim(),
-                asal: document.getElementById('input-asal').value.trim()
-            };
+        { id: 73, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya bisa menangkap ketukan nada atau irama musik dengan cepat.", category: "Musical", type: "binary" },
+        { id: 74, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya sering bersenandung atau mengetuk meja mengikuti irama lagu secara spontan.", category: "Musical", type: "binary" },
+        { id: 75, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya peka jika ada alat musik yang sumbang atau keluar dari kunci nada.", category: "Musical", type: "binary" },
+        { id: 76, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya suka belajar sambil mendengarkan musik di latar belakang.", category: "Musical", type: "binary" },
+        { id: 77, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya bisa memainkan setidaknya satu alat musik atau bernyanyi selaras nada.", category: "Musical", type: "binary" },
+        { id: 78, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya mudah menghafal melodi atau lirik lagu yang baru didengar.", category: "Musical", type: "binary" },
+        { id: 79, section: "Sesi 2: MIS Gardner (Musical)", text: "Saya tertarik mempelajari struktur komposisi musik atau genre lagu.", category: "Musical", type: "binary" },
+        { id: 80, section: "Sesi 2: MIS Gardner (Musical)", text: "Musik memiliki pengaruh besar terhadap perubahan emosi dan fokus saya.", category: "Musical", type: "binary" },
 
-            if (!studentData.nama || !studentData.nisn || !studentData.kelas || !studentData.keahlian || !studentData.asal) {
-                alert("Mohon isi semua data identitas terlebih dahulu.");
+        { id: 81, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya lebih mudah memahami sesuatu jika mempraktikkannya langsung secara fisik.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 82, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya menyukai aktivitas olahraga, menari, atau seni bela diri.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 83, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya memiliki koordinasi tubuh dan keseimbangan fisik yang cukup baik.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 84, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya terampil membuat kerajinan tangan atau memperbaiki barang mekanik.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 85, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya merasa tidak betah jika harus duduk diam di kursi dalam waktu yang sangat lama.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 86, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya sering menggunakan bahasa tubuh atau gerakan tangan saat berbicara.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 87, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya menikmati akting, bermain teater, atau meniru gerakan tertentu.", category: "Bodily-Kinesthetic", type: "binary" },
+        { id: 88, section: "Sesi 2: MIS Gardner (Bodily-Kinesthetic)", text: "Saya menyukai permainan luar ruangan yang menuntut kekuatan fisik fisik.", category: "Bodily-Kinesthetic", type: "binary" },
+
+        { id: 89, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya mudah bergaul dan menjalin hubungan akrab dengan orang baru.", category: "Interpersonal", type: "binary" },
+        { id: 90, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya bisa memahami perasaan, suasana hati, atau intensi orang lain.", category: "Interpersonal", type: "binary" },
+        { id: 91, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya sering ditunjuk menjadi penengah atau pendamai jika teman berselisih.", category: "Interpersonal", type: "binary" },
+        { id: 92, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya menikmati aktivitas kerja kelompok atau kepanitiaan bersama.", category: "Interpersonal", type: "binary" },
+        { id: 93, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya memiliki jaringan pertemanan yang luas di dalam maupun luar sekolah.", category: "Interpersonal", type: "binary" },
+        { id: 94, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya senang mendengarkan cerita orang lain dan memberikan solusi/dukungan.", category: "Interpersonal", type: "binary" },
+        { id: 95, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya percaya diri memimpin atau mengarahkan anggota tim kerja kelompok.", category: "Interpersonal", type: "binary" },
+        { id: 96, section: "Sesi 2: MIS Gardner (Interpersonal)", text: "Saya peka terhadap norma sosial dan etika pergaulan kelompok masyarakat.", category: "Interpersonal", type: "binary" },
+
+        { id: 97, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya mengenali kekuatan, kelemahan, dan batasan dalam diri saya.", category: "Intrapersonal", type: "binary" },
+        { id: 98, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya rutin menyisihkan waktu untuk merenung atau mengevaluasi diri.", category: "Intrapersonal", type: "binary" },
+        { id: 99, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya memiliki tujuan hidup yang jelas dan prinsip yang teguh.", category: "Intrapersonal", type: "binary" },
+        { id: 100, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya lebih suka belajar mandiri atau bekerja secara individual.", category: "Intrapersonal", type: "binary" },
+        { id: 101, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya mampu mengelola stres dan mengendalikan emosi dengan baik.", category: "Intrapersonal", type: "binary" },
+        { id: 102, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya tahu apa yang benar-benar memotivasi tindakan atau keputusan saya.", category: "Intrapersonal", type: "binary" },
+        { id: 103, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya tidak mudah terpengaruh oleh opini orang lain jika bertentangan dengan hati nurani.", category: "Intrapersonal", type: "binary" },
+        { id: 104, section: "Sesi 2: MIS Gardner (Intrapersonal)", text: "Saya suka menulis buku harian atau catatan refleksi personal diri.", category: "Intrapersonal", type: "binary" },
+
+        { id: 105, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya menyukai aktivitas mendaki gunung, berkemah, atau menyusuri hutan.", category: "Naturalist", type: "binary" },
+        { id: 106, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya peduli pada isu kelestarian lingkungan dan konservasi alam.", category: "Naturalist", type: "binary" },
+        { id: 107, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya senang memelihara hewan atau merawat tanaman hias di rumah.", category: "Naturalist", type: "binary" },
+        { id: 108, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya bisa membedakan jenis flora, fauna, atau formasi bebatuan.", category: "Naturalist", type: "binary" },
+        { id: 109, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya merasa segar dan berenergi kembali jika berada di alam terbuka.", category: "Naturalist", type: "binary" },
+        { id: 110, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya suka mempelajari fenomena cuaca, ekosistem bumi, atau astronomi.", category: "Naturalist", type: "binary" },
+        { id: 111, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya peka terhadap perubahan iklim atau tanda-tanda alam di sekeliling.", category: "Naturalist", type: "binary" },
+        { id: 112, section: "Sesi 2: MIS Gardner (Naturalist)", text: "Saya menikmati kunjungan ke kebun binatang, akuarium besar, atau taman nasional.", category: "Naturalist", type: "binary" },
+
+        // --- 3. VAK GAYA BELAJAR (113 - 126) ---
+        { id: 113, section: "Sesi 3: Gaya Belajar VAK", text: "Saya lebih mudah mengingat penjelasan materi jika membaca teks ringkasan tertulis.", category: "Visual", type: "likert" },
+        { id: 114, section: "Sesi 3: Gaya Belajar VAK", text: "Saya sangat terbantu dengan warna-warni stabilo, peta konsep, atau grafik visual.", category: "Visual", type: "likert" },
+        { id: 115, section: "Sesi 3: Gaya Belajar VAK", text: "Saya kesulitan konsentrasi belajar jika ruangan berantakan secara visual.", category: "Visual", type: "likert" },
+        { id: 116, section: "Sesi 3: Gaya Belajar VAK", text: "Saya lebih suka menonton video penjelasan demonstrasi daripada sekadar mendengar rekaman suara.", category: "Visual", type: "likert" },
+        { id: 117, section: "Sesi 3: Gaya Belajar VAK", text: "Saya lebih mudah mengingat materi jika mendengarkan ceramah guru dengan saksama.", category: "Auditori", type: "likert" },
+        { id: 118, section: "Sesi 3: Gaya Belajar VAK", text: "Saya sering membaca teks pelajaran dengan suara lirih agar lebih meresap.", category: "Auditori", type: "likert" },
+        { id: 119, section: "Sesi 3: Gaya Belajar VAK", text: "Saya mudah terganggu atau buyar konsentrasi jika suasana ruangan berisik/bising.", category: "Auditori", type: "likert" },
+        { id: 120, section: "Sesi 3: Gaya Belajar VAK", text: "Saya senang berdiskusi atau mendengarkan penjelasan teman kelompok.", category: "Auditori", type: "likert" },
+        { id: 121, section: "Sesi 3: Gaya Belajar VAK", text: "Saya lebih mudah menghafal lagu daripada menghafal teks bacaan.", category: "Auditori", type: "likert" },
+        { id: 122, section: "Sesi 3: Gaya Belajar VAK", text: "Saya lebih suka praktik langsung di laboratorium atau bengkel kerja daripada membaca teori.", category: "Kinestetik", type: "likert" },
+        { id: 123, section: "Sesi 3: Gaya Belajar VAK", text: "Saya sering menggerakkan kaki, mengetuk jari, atau berjalan saat sedang menghafal.", category: "Kinestetik", type: "likert" },
+        { id: 124, section: "Sesi 3: Gaya Belajar VAK", text: "Saya menyukai kegiatan belajar lapangan, eksperimen fisik, atau simulasi peran.", category: "Kinestetik", type: "likert" },
+        { id: 125, section: "Sesi 3: Gaya Belajar VAK", text: "Saya menggunakan jari saya sebagai penunjuk saat membaca teks buku bacaan.", category: "Kinestetik", type: "likert" },
+        { id: 126, section: "Sesi 3: Gaya Belajar VAK", text: "Saya merasa bosan jika harus duduk diam mendengarkan penjelasan materi lebih dari tiga puluh menit.", category: "Kinestetik", type: "likert" }
+    ];
+
+    const recommendations = {
+        // RIASEC
+        "Realistic": "<strong>Rekomendasi Karir Masa Depan:</strong> Ahli Otomotif, Teknisi Komputer & Jaringan, Rekayasa Perangkat Lunak, Teknisi Alat Berat, Operator Mesin Industri, Ahli Agronomi/Pertanian Praktis.<br><em>Saran Penyelarasan SMK:</em> Fokus pada penguatan kompetensi teknis praktis di laboratorium/bengkel kerja, ikuti program magang industri intensif.",
+        "Investigative": "<strong>Rekomendasi Karir Masa Depan:</strong> Data Analyst, Software Engineer/Programmer, Peneliti Ilmiah, Ahli Statistik, Pengembang Sistem Jaringan, Ahli Laboratorium Kimia/Pangan.<br><em>Saran Penyelarasan SMK:</em> Salurkan minat pada klub riset ilmiah, perlombaan kompetensi pemrograman, atau proyek analisis data sekolah.",
+        "Artistic": "<strong>Rekomendasi Karir Masa Depan:</strong> UI/UX Designer, Graphic Designer, Content Creator, Animator 2D/3D, Copywriter, Fotografer/Videografer Profesional, Arsitek Digital.<br><em>Saran Penyelarasan SMK:</em> Terlibat aktif dalam pembuatan produk kreatif multimedia sekolah, portofolio desain orisinal, atau dekorasi pameran.",
+        "Social": "<strong>Rekomendasi Karir Masa Depan:</strong> Guru/Pendidik Teknolog, Konselor, Customer Relations Executive, Humas (Public Relations), Ahli Manajemen Komunitas, Tenaga Medis/Paramedis.<br><em>Saran Penyelarasan SMK:</em> Optimalkan peran dalam organisasi OSIS, Palang Merah Remaja (PMR), Pramuka, atau menjadi tutor sebaya di kelas.",
+        "Enterprising": "<strong>Rekomendasi Karir Masa Depan:</strong> Wirausahawan (Entrepreneur), Digital Marketer, Manajer Proyek, Business Development, Account Executive, Manajer Penjualan.<br><em>Saran Penyelarasan SMK:</em> Pimpin proyek wirausaha mandiri (Teaching Factory), aktif dalam program inkubator bisnis sekolah atau lomba bisnis plan.",
+        "Conventional": "<strong>Rekomendasi Karir Masa Depan:</strong> Akuntan, Staff Administrasi Perkantoran, Database Administrator, auditor Keuangan, Ahli Arsip Digital, Quality Control Specialist.<br><em>Saran Penyelarasan SMK:</em> Pertahankan ketelitian administrasi keuangan, asah penguasaan software perkantoran (Spreadsheet tingkat lanjut), tata arsip dokumen.",
+
+        // GARDNER
+        "Linguistic": "Mengikuti Ekstrakurikuler Kelompok Ilmiah Remaja (KIR - Bidang Sastra/Sosial), Klub Debat, Jurnalistik Sekolah, Majalah Dinding (Mading), atau Komunitas Broadcasting/Podcasting SMK.",
+        "Logical-Mathematical": "Mengikuti Ekstrakurikuler Klub Robotika, Komunitas Coding/Programming, Olimpiade Sains Nasional (OSN Matematika/Fisika), Kelompok riset Teknologi Tepat Guna.",
+        "Visual-Spatial": "Mengikuti Ekstrakurikuler Klub Desain Grafis, Fotografi & Sinematografi, Seni Rupa, Komunitas Pencinta UI/UX Web, atau Komunitas Seni Dekorasi.",
+        "Musical": "Mengikuti Ekstrakurikuler Band Sekolah, Paduan Suara (Choir), Marawis/Hadrah, Marching Band, atau Kelompok Musik Tradisional/Modern.",
+        "Bodily-Kinesthetic": "Mengikuti Ekstrakurikuler Klub Olahraga (Futsal, Basket, Voli, Badminton), Seni Bela Diri (Pencak Silat, Taekwondo), Seni Tari Tradisional/Modern Dance, atau Teater SMK.",
+        "Interpersonal": "Mengikuti Ekstrakurikuler Pengurus Inti OSIS, MPK, Pramuka (Laksana/Bantara), Palang Merah Remaja (PMR), Komunitas konselor Sebaya (Pusat Informasi Konseling Remaja/PIK-R).",
+        "Intrapersonal": "Mengikuti Ekstrakurikuler Kelompok Studi Spiritual/Kerohanian (Rohis/Rohkris), Jurnalistik Reflektif, atau Kelas Pengembangan Karir Mandiri.",
+        "Naturalist": "Mengikuti Ekstrakurikuler Pecinta Alam (Sispala), Komunitas Green School, Saka Wanabakti/Tarunabumi Pramuka, Klub Budidaya Hidroponik atau Kewirausahaan Lingkungan.",
+
+        // VAK
+        "Visual": "<strong>Strategi Belajar Efektif:</strong> Manfaatkan catatan bermodel mind-map, gunakan penanda warna (stabilo), belajar lewat infografis, diagram, animasi simulasi, atau tutorial video video instruksional.",
+        "Auditori": "<strong>Strategi Belajar Efektif:</strong> Dengarkan penjelasan guru dengan saksama, gunakan rekaman suara materi, belajar kelompok dengan metode diskusi aktif, atau membaca nyaring kalimat kunci saat menghafal.",
+        "Kinestetik": "<strong>Strategi Belajar Efektif:</strong> Lakukan simulasi/praktik langsung sesering mungkin di bengkel/lab, buat jeda istirahat pendek berkala saat belajar teori, gunakan gerakan tangan atau alat peraga fisik."
+    };
+
+    let currentIndex = 0;
+    let timeRemaining = 60 * 60; 
+    let timerId = null;
+    let answers = {};
+    let studentData = {};
+
+    function validateForm() {
+        studentData.nama = document.getElementById('input-nama').value.trim();
+        studentData.nisn = document.getElementById('input-nisn').value.trim();
+        studentData.keahlian = document.getElementById('input-keahlian').value;
+        studentData.asal = document.getElementById('input-asal').value.trim();
+
+        if(!studentData.nama || !studentData.nisn || !studentData.keahlian || !studentData.asal) {
+            alert("Mohon lengkapi seluruh kolom biodata siswa terlebih dahulu.");
+            return;
+        }
+
+        document.getElementById('start-page').style.display = "none";
+        document.getElementById('quiz-page').style.display = "block";
+        window.scrollTo(0,0);
+        
+        initQuiz();
+    }
+
+    function initQuiz() {
+        buildGrid();
+        showQuestion();
+        startTimer();
+    }
+
+    function startTimer() {
+        timerId = setInterval(() => {
+            timeRemaining--;
+            let mins = Math.floor(timeRemaining / 60);
+            let secs = timeRemaining % 60;
+            document.getElementById('timer-display').innerText = 
+                `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+            
+            if(timeRemaining <= 0) {
+                clearInterval(timerId);
+                alert("Waktu pengerjaan instrumen telah habis! Sistem otomatis mengirim lembar jawaban Anda.");
+                finishQuiz();
+            }
+        }, 1000);
+    }
+
+    function buildGrid() {
+        const grid = document.getElementById('number-grid-elements');
+        grid.innerHTML = "";
+        questions.forEach((q, idx) => {
+            let btn = document.createElement('button');
+            btn.className = "num-item num-unanswered";
+            btn.id = `grid-item-${idx}`;
+            btn.innerText = idx + 1;
+            btn.onclick = () => { jumpToQuestion(idx); };
+            grid.appendChild(btn);
+        });
+    }
+
+    function updateGridStatus() {
+        questions.forEach((q, idx) => {
+            let btn = document.getElementById(`grid-item-${idx}`);
+            if(!btn) return;
+            
+            btn.className = "num-item";
+            if(idx === currentIndex) {
+                btn.classList.add("num-current");
+            } else if(answers[q.id] !== undefined) {
+                btn.classList.add("num-answered");
+            } else {
+                btn.classList.add("num-unanswered");
+            }
+        });
+    }
+
+    function showQuestion() {
+        const q = questions[currentIndex];
+        document.getElementById('current-section-lbl').innerText = q.section;
+        document.getElementById('question-number-title').innerText = `Pernyataan Lembar Soal Nomor ${currentIndex + 1} dari ${questions.length}`;
+        document.getElementById('question-text-content').innerText = q.text;
+
+        const optionsDiv = document.getElementById('options-container');
+        optionsDiv.innerHTML = "";
+
+        if(q.type === "likert") {
+            optionsDiv.className = "options-likert";
+            const scales = [
+                { val: 5, lbl: "Sangat Sesuai (SS) sekali dengan diri saya" },
+                { val: 4, lbl: "Sesuai (S) dengan kondisi saya" },
+                { val: 3, lbl: "Cukup Sesuai (CS) atau ragu-ragu" },
+                { val: 2, lbl: "Tidak Sesuai (TS) dengan minat saya" },
+                { val: 1, lbl: "Sangat Tidak Sesuai (STS) sama sekali" }
+            ];
+            scales.forEach(s => {
+                let btn = document.createElement('button');
+                btn.className = "opt-btn";
+                if(answers[q.id] === s.val) btn.classList.add('selected');
+                btn.innerText = s.lbl;
+                btn.onclick = () => { selectAnswer(q.id, s.val); };
+                optionsDiv.appendChild(btn);
+            });
+        } else if(q.type === "binary") {
+            optionsDiv.className = "options-binary";
+            const options = [
+                { val: 1, lbl: "Ya, Benar (Kondisi ini menggambarkan diri saya)" },
+                { val: 0, lbl: "Tidak (Kondisi ini tidak cocok dengan saya)" }
+            ];
+            options.forEach(o => {
+                let btn = document.createElement('button');
+                btn.className = "opt-btn";
+                if(answers[q.id] === o.val) btn.classList.add('selected');
+                btn.innerText = o.lbl;
+                btn.onclick = () => { selectAnswer(q.id, o.val); };
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        document.getElementById('btn-prev').style.visibility = (currentIndex === 0) ? "hidden" : "visible";
+        
+        if(currentIndex === questions.length - 1) {
+            document.getElementById('btn-next').style.display = "none";
+            document.getElementById('btn-submit-test').style.display = "inline-block";
+        } else {
+            document.getElementById('btn-next').style.display = "inline-block";
+            document.getElementById('btn-submit-test').style.display = "none";
+        }
+
+        updateGridStatus();
+    }
+
+    function selectAnswer(qId, value) {
+        answers[qId] = value;
+        showQuestion();
+        
+        // Otomatis geser ke nomor berikutnya jika bukan nomor terakhir untuk kenyamanan pengisian
+        if(currentIndex < questions.length - 1) {
+            setTimeout(() => { navigate(1); }, 200);
+        }
+    }
+
+    function navigate(step) {
+        currentIndex += step;
+        if(currentIndex < 0) currentIndex = 0;
+        if(currentIndex >= questions.length) currentIndex = questions.length - 1;
+        showQuestion();
+    }
+
+    function jumpToQuestion(idx) {
+        currentIndex = idx;
+        showQuestion();
+    }
+
+    function finishQuiz() {
+        let unansweredCount = 0;
+        questions.forEach(q => {
+            if(answers[q.id] === undefined) unansweredCount++;
+        });
+
+        if(unansweredCount > 0) {
+            if(!confirm(`Ada ${unansweredCount} lembar pernyataan yang belum Anda isi di peta jawaban digital. Apakah Anda yakin ingin mengakhiri ujian dan mengirim hasil sekarang?`)) {
                 return;
             }
-
-            document.getElementById('start-page').style.display = "none";
-            document.getElementById('quiz-page').style.display = "block";
-            document.getElementById('quiz-timer-wrapper').style.display = "flex";
-            window.scrollTo(0, 0);
-
-            buildNumberGrid();
-            renderQuestion();
-            startTimer();
-        }
-
-        function buildNumberGrid() {
-            const gridContainer = document.getElementById('number-grid-elements');
-            gridContainer.innerHTML = "";
-            questions.forEach((q, idx) => {
-                const btn = document.createElement('button');
-                btn.type = "button";
-                btn.id = `grid-num-${idx}`;
-                btn.className = "num-item num-unanswered";
-                btn.innerText = idx + 1;
-                btn.onclick = () => {
-                    currentIndex = idx;
-                    renderQuestion();
-                };
-                gridContainer.appendChild(btn);
-            });
-        }
-
-        function renderQuestion() {
-            const q = questions[currentIndex];
-            document.getElementById('current-section-lbl').innerText = q.section;
-            document.getElementById('question-number-title').innerText = `Soal Nomor ${currentIndex + 1}`;
-            document.getElementById('question-text-content').innerText = q.text;
-
-            const container = document.getElementById('options-container');
-            container.innerHTML = "";
-
-            likertOptions.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.type = "button";
-                btn.className = "opt-btn";
-                if (answers[q.id] === opt.score) btn.classList.add('selected');
-                btn.innerText = opt.label;
-                btn.onclick = () => selectAnswer(q.id, opt.score);
-                container.appendChild(btn);
-            });
-
-            document.getElementById('btn-prev').style.display = currentIndex === 0 ? "none" : "inline-block";
-            if (currentIndex === questions.length - 1) {
-                document.getElementById('btn-next').style.display = "none";
-                document.getElementById('btn-submit-test').style.display = "inline-block";
-            } else {
-                document.getElementById('btn-next').style.display = "inline-block";
-                document.getElementById('btn-submit-test').style.display = "none";
-            }
-
-            questions.forEach((item, idx) => {
-                const gridBtn = document.getElementById(`grid-num-${idx}`);
-                if (gridBtn) {
-                    gridBtn.className = "num-item";
-                    if (idx === currentIndex) gridBtn.classList.add('num-current');
-                    else if (answers[item.id] !== undefined) gridBtn.classList.add('num-answered');
-                    else gridBtn.classList.add('num-unanswered');
-                }
-            });
-        }
-
-        function selectAnswer(qId, score) {
-            answers[qId] = score;
-            renderQuestion();
-            if (currentIndex < questions.length - 1) {
-                setTimeout(() => {
-                    currentIndex++;
-                    renderQuestion();
-                }, 200);
+        } else {
+            if(!confirm("Apakah Anda sudah yakin memeriksa seluruh jawaban dan ingin mengirim lembar asesmen resmi ini?")) {
+                return;
             }
         }
 
-        function navigate(dir) {
-            let target = currentIndex + dir;
-            if (target >= 0 && target < questions.length) {
-                currentIndex = target;
-                renderQuestion();
+        clearInterval(timerId);
+        document.getElementById('quiz-page').style.display = "none";
+        document.getElementById('result-page').style.display = "block";
+        window.scrollTo(0,0);
+        
+        calculateScores();
+    }
+
+    function calculateScores() {
+        // 1. Hitung RIASEC
+        let riasecScores = { "Realistic": 0, "Investigative": 0, "Artistic": 0, "Social": 0, "Enterprising": 0, "Conventional": 0 };
+        // 2. Hitung Gardner
+        let gardnerScores = { "Linguistic": 0, "Logical-Mathematical": 0, "Visual-Spatial": 0, "Musical": 0, "Bodily-Kinesthetic": 0, "Interpersonal": 0, "Intrapersonal": 0, "Naturalist": 0 };
+        // 3. Hitung VAK
+        let vakScores = { "Visual": 0, "Auditori": 0, "Kinestetik": 0 };
+
+        questions.forEach(q => {
+            let ansVal = answers[q.id] || 0;
+            if(q.id >= 1 && q.id <= 48) {
+                riasecScores[q.category] += ansVal;
+            } else if(q.id >= 49 && q.id <= 112) {
+                gardnerScores[q.category] += ansVal;
+            } else if(q.id >= 113 && q.id <= 126) {
+                vakScores[q.category] += ansVal;
             }
-        }
+        });
 
-        function startTimer() {
-            if (timerInterval) clearInterval(timerInterval);
-            timerInterval = setInterval(() => {
-                timeRemaining--;
-                if (timeRemaining <= 0) {
-                    clearInterval(timerInterval);
-                    alert("Waktu pengerjaan habis! Hasil akan otomatis dihitung.");
-                    finishQuiz();
-                } else {
-                    let m = Math.floor(timeRemaining / 60);
-                    let s = timeRemaining % 60;
-                    document.getElementById('timer-display').innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-                }
-            }, 1000);
-        }
+        // Konversi Persentase Maksimal Skor Realistis
+        // RIASEC: 8 soal x 5 skor = 40 max
+        let riasecArr = Object.keys(riasecScores).map(k => {
+            return { name: k, percent: Math.round((riasecScores[k] / 40) * 100) };
+        }).sort((a,b) => b.percent - a.percent);
 
-        function finishQuiz() {
-            let answeredCount = Object.keys(answers).length;
-            if (answeredCount < questions.length) {
-                let conf = confirm(`Anda belum menjawab ${questions.length - answeredCount} soal. Tetap kirim jawaban?`);
-                if (!conf) return;
-            }
+        // GARDNER: 8 soal x 1 skor = 8 max
+        let gardnerArr = Object.keys(gardnerScores).map(k => {
+            return { name: k, percent: Math.round((gardnerScores[k] / 8) * 100) };
+        }).sort((a,b) => b.percent - a.percent);
 
-            clearInterval(timerInterval);
-            document.getElementById('quiz-timer-wrapper').style.display = "none";
+        // VAK: V=4 soal(20 max), A=5 soal(25 max), K=5 soal(25 max)
+        let maxVakMap = { "Visual": 20, "Auditori": 25, "Kinestetik": 25 };
+        let vakArr = Object.keys(vakScores).map(k => {
+            return { name: k, percent: Math.round((vakScores[k] / maxVakMap[k]) * 100) };
+        }).sort((a,b) => b.percent - a.percent);
 
-            // Pasang identitas biodata ke tabel hasil
-            document.getElementById('res-nama').innerText = studentData.nama;
-            document.getElementById('res-nisn').innerText = studentData.nisn;
-            document.getElementById('res-kelas').innerText = studentData.kelas;
-            document.getElementById('res-keahlian').innerText = studentData.keahlian;
-            
-            // Pasang Asal Sekolah ke KOP Surat Hasil
-            document.getElementById('res-asal').innerText = studentData.asal;
+        renderTableResults(riasecArr, gardnerArr, vakArr);
+    }
 
-            document.getElementById('sig-student-name').innerText = studentData.nama;
-            document.getElementById('sig-student-nisn').innerText = `NISN. ${studentData.nisn}`;
+    function renderTableResults(riasec, gardner, vak) {
+        // Pasang data biodata
+        document.getElementById('res-nama').innerText = studentData.nama;
+        document.getElementById('res-nisn').innerText = studentData.nisn;
+        document.getElementById('res-keahlian').innerText = studentData.keahlian;
+        document.getElementById('res-asal').innerText = studentData.asal;
 
-            const dOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('current-date-lbl').innerText = `Pangkajene, ${new Date().toLocaleDateString('id-ID', dOptions)}`;
+        document.getElementById('sig-student-name').innerText = studentData.nama;
+        document.getElementById('sig-student-nisn').innerText = `NISN. ${studentData.nisn}`;
 
-            calculateScores();
+        // Pasang Tanggal Otomatis Realtime
+        let optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
+        let formatter = new Intl.DateTimeFormat('id-ID', optionsDate);
+        document.getElementById('current-date-lbl').innerText = `Pangkajene, ${formatter.format(new Date())}`;
 
-            document.getElementById('quiz-page').style.display = "none";
-            document.getElementById('result-page').style.display = "block";
-            window.scrollTo(0, 0);
-        }
+        // Mengatur Judul Tab Window untuk Penamaan Cetak Simpan PDF Otomatis Berdasarkan Nama Siswa
+        document.title = `Hasil Asesmen BK - ${studentData.nama} (${studentData.nisn})`;
 
-        function calculateScores() {
-            const recommendations = {
-                "Realistic": "Fokus pada pekerjaan fisik mekanikal, rekayasa mesin komputer jaringan (TKJ), perakitan otomotif, perkakas berat, listrik kelistrikan.",
-                "Investigative": "Unggul di bidang analisa logika abstrak, pemecahan bug coding program, riset laboratorium ilmiah, statistik data analis.",
-                "Artistic": "Sangat adaptif pada dunia seni kriya, editing video perfilman, desainer layout (DKV), arsitektur tata ruang, industri kreatif digital.",
-                "Social": "Sesuai dengan layanan kepedulian publik, edukasi pengajaran bimbingan, mediasi konflik sosial, humas, kesehatan keperawatan.",
-                "Enterprising": "Berbakat kuat memimpin organisasi intra sekolah, negosiasi promosi komersial bisnis, wirausaha kreatif digital (marketing).",
-                "Conventional": "Sangat teliti mengelola akuntansi pembukuan keuangan (AKL), tata kelola dokumen kearsipan kantor, pengolahan data logistik gudang.",
-                "Linguistic": "Sangat direkomendasikan aktif mengikuti Ekstrakurikuler Debat Konstitusi Bahasa, Jurnalistik Sekolah, Karya Tulis Ilmiah (KIR).",
-                "Logical-Mathematical": "Disarankan bergabung di Klub Pemrograman Robotika, Olimpiade Sains Matematika, Kelompok Catur Sekolah.",
-                "Spatial-Visual": "Sesuai mengikuti Ekstrakurikuler Fotografi Multimedia, Komunitas Gambar Seni Lukis, Klub Desain Sketsa Bangunan.",
-                "Bodily-Kinesthetic": "Sangat cocok masuk cabang Olahraga Prestasi, Paskibra Sekolah, Pramuka Penjelajah, Seni Bela Diri Silat.",
-                "Musical": "Direkomendasikan bergabung dengan Korps Marching Band, Tim Paduan Suara, Komunitas Band Kreatif Siswa.",
-                "Interpersonal": "Disarankan aktif menjadi Pengurus OSIS harian, Pusat Konseling Remaja (PIK-R), Palang Merah Remaja (PMR).",
-                "Intrapersonal": "Sesuai mengikuti Forum Kerohanian Keagamaan, Pelatihan Motivasi Karakter, Komunitas Menulis Jurnal Harian.",
-                "Naturalist": "Direkomendasikan masuk Komunitas Siswa Pecinta Alam (Sispala), Gerakan Penghijauan Sekolah, Kelompok Botani.",
-                "Visual": "Sangat efektif menyerap materi lewat penayangan video infografis, rangkuman teks rapi bertanda stabilo, peta konsep (mind-map).",
-                "Auditori": "Efektif belajar dengan cara menyimak penjelasan lisan aktif, forum diskusi tanya jawab, menyuarakan nyaring bacaan hafalan.",
-                "Kinestetik": "Sangat cepat paham via metode praktikum laboratorium langsung, eksperimen simulasi lapangan, manipulasi objek benda fisik."
-            };
+        const tbody = document.getElementById('dynamic-table-rows');
+        tbody.innerHTML = "";
 
-            let rScores = { Realistic: 0, Investigative: 0, Artistic: 0, Social: 0, Enterprising: 0, Conventional: 0 };
-            let gScores = { Linguistic: 0, "Logical-Mathematical": 0, "Spatial-Visual": 0, "Bodily-Kinesthetic": 0, Musical: 0, Interpersonal: 0, Intrapersonal: 0, Naturalist: 0 };
-            let vScores = { Visual: 0, Auditori: 0, Kinestetik: 0 };
+        // 1. Baris RIASEC (Ambil 3 Karakter Tipe Tertinggi / Tiga Kode Utama Holland)
+        let topThreeRiasec = riasec.slice(0, 3);
+        let riasecNames = topThreeRiasec.map(item => `${item.name} (${item.percent}%)`).join(', ');
+        let riasecRecs = topThreeRiasec.map(item => `<div>${recommendations[item.name]}</div>`).join('<hr style="border:0; border-top:1px dashed #000; margin:10px 0;">');
 
-            questions.forEach(q => {
-                let s = answers[q.id] || 0;
-                if (rScores[q.category] !== undefined) rScores[q.category] += s;
-                if (gScores[q.category] !== undefined) gScores[q.category] += s;
-                if (vScores[q.category] !== undefined) vScores[q.category] += s;
-            });
+        let riasecHTML = "<tr>";
+        riasecHTML += `<td style=\"vertical-align: middle;\"><strong>1. Orientasi Karir Holland</strong><br><small>(Tiga Tipe Karakter Dominan)</small></td>`;
+        riasecHTML += `<td>Hasil Dominan:<br><strong>${riasecNames}</strong></td>`;
+        riasecHTML += `<td class=\"deskripsi\">${riasecRecs}</td>`;
+        riasecHTML += "</tr>";
+        tbody.innerHTML += riasecHTML;
 
-            let rData = Object.keys(rScores).map(n => ({ name: n, percent: Math.round((rScores[n]/32)*100) })).sort((a,b)=>b.percent-a.percent);
-            let gData = Object.keys(gScores).map(n => ({ name: n, percent: Math.round((gScores[n]/24)*100) })).sort((a,b)=>b.percent-a.percent);
-            let vData = Object.keys(vScores).map(n => ({ name: n, percent: Math.round((vScores[n]/16)*100) })).sort((a,b)=>b.percent-a.percent);
+        // 2. Baris Gardner (Ambil 3 Potensi Kecerdasan Tertinggi)
+        let topThreeGardner = gardner.slice(0, 3);
+        let gardnerNames = topThreeGardner.map(item => `${item.name} (${item.percent}%)`).join(', ');
+        let gardnerRecs = "<strong>Rekomendasi Penyalarasan Bakat:</strong><ul style='margin:5px 0; padding-left:20px;'>";
+        topThreeGardner.forEach(item => {
+            gardnerRecs += `<li><strong>Kecerdasan ${item.name}:</strong> ${recommendations[item.name]}</li>`;
+        });
+        gardnerRecs += "</ul>";
 
-            const tbody = document.getElementById('dynamic-table-rows');
-            tbody.innerHTML = "";
+        let gardnerHTML = "<tr>";
+        gardnerHTML += `<td style=\"vertical-align: middle;\"><strong>2. Bakat Ekstrakurikuler</strong><br><small>(Kecerdasan Majemuk Gardner)</small></td>`;
+        gardnerHTML += `<td>Hasil Dominan:<br><strong>${gardnerNames}</strong></td>`;
+        gardnerHTML += `<td class=\"deskripsi\">${gardnerRecs}</td>`;
+        gardnerHTML += "</tr>";
+        tbody.innerHTML += gardnerHTML;
 
-            // 1. RIASEC rows
-            rData.slice(0, 2).forEach((item, idx) => {
-                let rHTML = "<tr>";
-                if (idx === 0) {
-                    rHTML += `<td rowspan="2" style="vertical-align: middle;"><strong>1. Rekomendasi Orientasi Karir</strong><br><small>(Aspek Kepribadian Kerja RIASEC)</small></td>`;
-                }
-                rHTML += `<td>Peringkat ${idx+1}:<br><strong>Tipe ${item.name} (${item.percent}%)</strong></td>`;
-                rHTML += `<td>${recommendations[item.name]}</td>`;
-                rHTML += "</tr>";
-                tbody.innerHTML += rHTML;
-            });
+        // 3. Baris Gaya Belajar VAK (Ambil Tipe Tertinggi Dominan)
+        let topVak = vak[0];
+        let vakHTML = "<tr>";
+        vakHTML += `<td style=\"vertical-align: middle;\"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
+        vakHTML += `<td>Hasil Dominan:<br><strong>Tipe ${topVak.name} (${topVak.percent}%)</strong></td>`;
+        vakHTML += `<td class=\"deskripsi\">${recommendations[topVak.name]}</td>`;
+        vakHTML += "</tr>";
+        tbody.innerHTML += vakHTML;
+    }
 
-            // 2. Gardner rows
-            gData.slice(0, 2).forEach((item, idx) => {
-                let rowHTML = "<tr>";
-                if (idx === 0) {
-                    rowHTML += `<td rowspan="2" style="vertical-align: middle;"><strong>2. Rekomendasi Kegiatan Ekstra</strong><br><small>(Kecerdasan Majemuk Gardner)</small></td>`;
-                }
-                rowHTML += `<td>Peringkat ${idx+1}:<br><strong>${item.name} (${item.percent}%)</strong></td>`;
-                rowHTML += `<td>${recommendations[item.name]}</td>`;
-                rowHTML += "</tr>";
-                tbody.innerHTML += rowHTML;
-            });
+    function handleDownloadPDF() {
+        window.print();
+        document.getElementById('btn-restart-page').style.display = "inline-block";
+    }
 
-            // 3. VAK row
-            let topV = vData[0].name;
-            let labelV = topV === "Visual" ? "Visual (Melihat)" : (topV === "Auditori" ? "Auditori (Mendengar)" : "Kinestetik (Bergerak)");
-            let vakHTML = "<tr>";
-            vakHTML += `<td style="vertical-align: middle;"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
-            vakHTML += `<td>Hasil Dominan:<br><strong>${labelV} (${vData[0].percent}%)</strong></td>`;
-            vakHTML += `<td>${recommendations[topV]}</td>`;
-            vakHTML += "</tr>";
-            tbody.innerHTML += vakHTML;
+    function restartAssessment() {
+        currentIndex = 0;
+        timeRemaining = 60 * 60; 
+        answers = {};
+        studentData = {};
+        document.title = "CBT Asesmen BK - SMKN 1 Pangkajene dan Kepulauan";
+        document.getElementById('biodata-form').reset();
+        document.getElementById('result-page').style.display = "none";
+        document.getElementById('start-page').style.display = "block";
+        window.scrollTo(0,0);
+    }
+</script>
 
-            document.title = `Hasil_Asesmen_BK_${studentData.nama}_${studentData.nisn}`;
-        }
-
-        function handleDownloadPDF() {
-            window.print();
-        }
-
-        function restartAssessment() {
-            currentIndex = 0;
-            timeRemaining = 60 * 60;
-            answers = {};
-            studentData = {};
-            document.title = "CBT Asesmen BK - Kenali Potensi Murid";
-            document.getElementById('biodata-form').reset();
-            document.getElementById('result-page').style.display = "none";
-            document.getElementById('quiz-page').style.display = "none";
-            document.getElementById('start-page').style.display = "block";
-            window.scrollTo(0, 0);
-        }
-    </script>
 </body>
 </html>
