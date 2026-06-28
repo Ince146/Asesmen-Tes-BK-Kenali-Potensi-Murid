@@ -1008,7 +1008,7 @@
             return { name: name, percent: pct };
         }).sort((a, b) => b.percent - a.percent);
 
-        document.title = `Hasil Asesmen BK - ${studentData.nama} - ${studentData.asal}`;
+        document.title = `${studentData.nama}_${studentData.nisn}_${studentData.kelas}_${studentData.keahlian}`;
         document.getElementById('res-header-school').innerText = studentData.asal;
         document.getElementById('res-nama').innerText = studentData.nama;
         document.getElementById('res-nisn').innerText = studentData.nisn;
