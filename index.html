@@ -955,11 +955,11 @@
     }
 
     function calculateScores() {
-        
-        // 1. RIASEC: Tampilkan hanya 3 persentase tertinggi (index 0, 1, 2)
+        // 1. RIASEC: Menggunakan .slice(0, 3) untuk membatasi hanya 3 persentase tertinggi
         finalRiasec.slice(0, 3).forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
+                // rowspan diubah menjadi 3 karena hanya menampilkan 3 baris
                 rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-riasec) !important;"><strong>1. Minat Karir / Tipologi Kerja</strong><br><small>(Holland RIASEC Model)</small></td>`;
             }
             rowHTML += `<td style="background-color: var(--box-riasec) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
@@ -969,10 +969,11 @@
             tbody.innerHTML += rowHTML;
         });
 
-        // 2. GARDNER: Tampilkan hanya 3 persentase tertinggi (index 0, 1, 2)
+        // 2. GARDNER: Menggunakan .slice(0, 3) untuk membatasi hanya 3 persentase tertinggi
         finalGardner.slice(0, 3).forEach((item, idx) => {
             let rowHTML = "<tr>";
             if(idx === 0) {
+                // rowspan diubah menjadi 3 karena hanya menampilkan 3 baris
                 rowHTML += `<td rowspan="3" style="vertical-align: middle; background-color: var(--box-gardner) !important;"><strong>2. Potensi Kecerdasan Majemuk</strong><br><small>(Multiple Intelligences Gardner)</small></td>`;
             }
             rowHTML += `<td style="background-color: var(--box-gardner) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
@@ -982,23 +983,19 @@
             tbody.innerHTML += rowHTML;
         });
 
-        // 3. VAK: Tampilkan hanya 1 persentase yang paling tertinggi (index 0)
+        // 3. VAK GAYA BELAJAR: Menggunakan .slice(0, 1) untuk mengambil 1 skor yang paling tertinggi (dominan)
         finalVak.slice(0, 1).forEach((item, idx) => {
-            let displayName = item.name;
-            if (displayName === "Auditory") displayName = "Auditori (Auditory)";
-            if (displayName === "Kinesthetic_VAK") displayName = "Kinestetik (Kinesthetic)";
-            
             let rowHTML = "<tr>";
             if(idx === 0) {
+                // rowspan diubah menjadi 1 karena hanya menampilkan 1 baris teratas
                 rowHTML += `<td rowspan="1" style="vertical-align: middle; background-color: var(--box-vak) !important;"><strong>3. Gaya Belajar Efektif</strong><br><small>(VAK Model Dominan)</small></td>`;
             }
-            rowHTML += `<td style="background-color: var(--box-vak) !important;">Peringkat ${idx+1}: <strong>${displayName}</strong></td>`;
+            rowHTML += `<td style="background-color: var(--box-vak) !important;">Peringkat ${idx+1}: <strong>${item.name}</strong></td>`;
             rowHTML += `<td style="text-align: center; background-color: var(--box-vak) !important;"><strong>${item.percent}%</strong></td>`;
             rowHTML += `<td style="background-color: var(--box-vak) !important;">${recommendations[item.name] || 'Deskripsi tidak ditemukan'}</td>`;
             rowHTML += "</tr>";
             tbody.innerHTML += rowHTML;
         });
-
         
         let finalRiasec = Object.keys(riasecScores).map(name => {
             let pct = riasecCounts[name] > 0 ? Math.round((riasecScores[name] / riasecCounts[name]) * 100) : 0;
